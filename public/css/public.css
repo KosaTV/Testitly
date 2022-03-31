@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
+@keyframes closing {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@keyframes loading {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+::selection {
+  background: #00aaff;
+  color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #00aaff;
+  border: 2px solid #f3f3f3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 1rem;
+  background: #33bbff;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* The track NOT covered by the handle. */
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Resizer */
+::-webkit-resizer {
+  background: transparent;
+}
+
+.page {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
+  color: #afafaf;
+  overflow: hidden;
+}
+
+.public-test__test {
+  user-select: none;
+  padding: 2rem;
+  font-size: 2rem;
+  color: #969696;
+  border-bottom: 1px solid #f1f1f1;
+}
+.public-test__test:hover {
+  background: #f0f0ff;
+}
+
+.testing .window__content {
+  overflow: auto;
+  height: calc(100% - 43px);
+}
+.testing__q-box {
+  margin: 0.5rem;
+  padding: 1rem;
+  color: #bebebe;
+  background: #f0f0ff;
+}
+.testing__q-title-box {
+  font-size: 2rem;
+}
+.testing__q-answears-box {
+  padding: 0.5rem 1rem;
+}
+.testing__q-answears-box .testing__label {
+  display: block;
+  margin: 1rem;
+  font-size: 1.75rem;
+}
+.testing__q-answears-box .testing__label .testing__checkable {
+  margin: 0.5rem;
+}
+
+.resultat .window__content {
+  min-height: calc(100% - 43px);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+.resultat .window__content .resultat__percent {
+  font-size: 6rem;
+  color: #00aaff;
+}
+.resultat .window__content .resultat__points {
+  font-size: 3rem;
+  color: #e1e1e1;
+}
+
+/*# sourceMappingURL=public.css.map */

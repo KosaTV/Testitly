@@ -1,0 +1,261 @@
+.input-cnt {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 1rem;
+}
+
+.calendar-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0;
+	border-top-left-radius: 0.75rem;
+	border-bottom-left-radius: 0.75rem;
+	font-size: 1.2rem;
+	color: rgb(100, 100, 100);
+}
+
+.calendar-ico {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 40px;
+	height: 100%;
+	border: none;
+	background: #00aaff;
+	color: rgb(240, 240, 240);
+	border-top-right-radius: 0.75rem;
+	border-bottom-right-radius: 0.75rem;
+	opacity: 0.9;
+	font-size: 1.8rem;
+	cursor: pointer;
+}
+
+.calendar-ico:hover {
+	opacity: 1;
+}
+
+.calendar-ico:focus {
+	outline: none;
+}
+
+.calendar-ico-focus {
+	background: #00aaff;
+	color: rgb(230, 230, 230);
+}
+
+.calendar-container {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	z-index: 1;
+	transform: translate(-50%, -20px);
+	transition: all 0.2s 0s ease;
+	min-height: 300px;
+	width: 300px;
+	border-radius: 8px;
+	overflow: hidden;
+	background: rgb(242.5, 242.5, 255);
+	box-shadow: 3px 3px 5px 1.1px rgb(40, 40, 40);
+	color: rgb(30, 30, 30);
+}
+
+.show {
+	opacity: 1 !important;
+	transform: translate(-50%, 0) !important;
+	pointer-events: all !important;
+}
+
+.calendar-up-element {
+	display: flex;
+	flex-flow: nowrap row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	background: #00aaff;
+	color: rgb(240, 240, 240);
+}
+
+.calendar-header h2 {
+	font-weight: 400;
+	font-size: 2rem;
+	pointer-events: none;
+	text-shadow: none;
+}
+
+.prev-btn,
+.next-btn {
+	outline: none;
+	font-size: 2rem;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: rgb(230, 210, 255);
+}
+
+.calendar-content {
+	padding: 1rem;
+	background: white;
+}
+
+.calendar-table .week-days {
+	display: flex;
+	flex-flow: nowrap row;
+	justify-content: space-around;
+	font-size: 1.15rem;
+	margin: 0.5rem 0;
+}
+
+.calendar-table .week {
+	display: flex;
+	flex-flow: nowrap row;
+	justify-content: space-around;
+}
+
+.calendar-table .day,
+.calendar-table .empty {
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	color: rgb(60, 60, 60);
+	font-size: 1.75rem;
+	margin: 0.5rem 0;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+.calendar-table .day:hover {
+	border: 1px solid #00aaff;
+	cursor: pointer;
+}
+
+.calendar-table .current-day {
+	background: #00aaff;
+}
+
+.calendar-table .empty {
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+.calendar-down-element {
+	display: flex;
+	width: 100%;
+	flex-flow: wrap column;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	background: #00aaff;
+	color: rgb(240, 240, 240);
+	font-size: 3rem;
+	cursor: pointer;
+}
+
+.mini-calendar {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -20px);
+	transition: all 0.5s 0s ease;
+	width: 150px;
+	border-radius: 8px;
+	overflow: hidden;
+	background: rgb(242.5, 242.5, 255);
+	box-shadow: 3px 3px 5px 1.1px rgb(40, 40, 40);
+	color: rgb(30, 30, 30);
+}
+
+.calendar-mini-down-element,
+.calendar-mini-up-element {
+	display: flex;
+	width: 100%;
+	flex-flow: wrap column;
+	align-items: center;
+	justify-content: center;
+	height: 25px;
+	background: #00aaff;
+	color: rgb(240, 240, 240);
+	cursor: pointer;
+}
+
+.calendar-mini-up-element {
+	border-top-left-radius: 0.8rem;
+	border-top-right-radius: 0.8rem;
+	font-size: 1rem;
+	padding: 0.5rem;
+}
+
+.calendar-mini-header h2 {
+	font-size: 1.5rem;
+	pointer-events: none;
+	text-shadow: none;
+}
+
+.calendar-mini-down-element {
+	border-bottom-left-radius: 0.8rem;
+	border-bottom-right-radius: 0.8rem;
+	font-size: 1.5rem;
+}
+
+.mini-prev-btn,
+.mini-next-btn {
+	outline: none;
+	font-size: 1.5rem;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: rgb(230, 210, 255);
+}
+
+.mini-content {
+	background: white;
+	display: flex;
+	flex-flow: nowrap column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mini-table {
+	display: flex;
+	flex-flow: wrap column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mini-prev-day,
+.mini-next-day {
+	outline: none;
+	font-size: 2rem;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: rgb(60, 60, 60);
+}
+
+.mini-table .day {
+	cursor: pointer;
+	color: rgb(60, 60, 60);
+	font-size: 4.5rem;
+	margin: 0 0.75rem;
+}
+
+.mini-table .week-day {
+	color: rgb(60, 60, 60);
+	font-size: 1rem;
+	margin: 0 0.75rem;
+}
+
+.mini-table .calendar-days {
+	display: flex;
+	flex-flow: nowrap row;
+	justify-content: center;
+	align-items: center;
+}

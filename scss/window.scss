@@ -1,0 +1,162 @@
+@import "config", "style";
+
+.window {
+	position: absolute;
+	background: map-get($white, "1");
+	box-shadow: $system-shadow;
+	border-radius: 2rem;
+	z-index: 10;
+	overflow: hidden;
+
+	&--open {
+		animation: closing 0.13s 0s forwards reverse;
+	}
+
+	&--close {
+		animation: closing 0.13s 0s forwards;
+	}
+
+	&--max {
+		width: 100vw !important;
+		height: 100vh !important;
+		border-radius: 0;
+	}
+
+	&__top-bar,
+	&__bottom-bar {
+		@include flex-center;
+		position: sticky;
+		bottom: 0;
+		left: 0;
+		margin-top: 1rem;
+		background: darken(map-get($white, "1"), 1%);
+	}
+
+	&__top-bar {
+		margin: 0;
+		padding: 1rem;
+		gap: 1rem;
+	}
+
+	&__content {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom-left-radius: 2rem;
+		border-bottom-right-radius: 2rem;
+		padding: 0.5rem;
+
+		&--disabled {
+			display: none;
+		}
+	}
+
+	&__title {
+		font-size: 2rem;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	&__canvas {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: -1;
+	}
+
+	&__button {
+		@include flex-center;
+		outline: none;
+		cursor: pointer;
+		border: none;
+		margin: 1rem 0;
+		padding: 1rem;
+		border-radius: 1rem;
+		font-size: 1.7rem;
+		background: $secondary-color;
+		font-family: inherit;
+		color: white;
+		opacity: 0.8;
+		@include transition-ease;
+
+		&--ico {
+			width: 40px;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:active {
+			background: map-get($white, "3");
+		}
+	}
+
+	&__input {
+		outline: none;
+		border: none;
+		box-shadow: inset 0 0 0 1px map-get($white, "2");
+		border-radius: 0.75rem;
+		padding: 0.85rem;
+		font-size: 1.85rem;
+		font-family: inherit;
+		min-width: 200px;
+		width: 69%;
+		height: 40px;
+		color: map-get($white, "7");
+		background: white;
+		transition: box-shadow 0.2s 0s ease;
+
+		&::placeholder {
+			opacity: 1;
+			color: map-get($white, "6");
+			transition: color 0.2s 0s ease;
+		}
+
+		&:focus {
+			box-shadow: inset 0 0 2px 1px $secondary-color;
+			&::placeholder {
+				color: map-get($white, "4");
+			}
+		}
+	}
+
+	&__win-button {
+		outline: none;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		margin: 0.1rem;
+		font-size: 1.5rem;
+		border: none;
+		color: map-get($white, "7");
+		background: transparent;
+
+		&:hover {
+			background: rgba($hover-color, 0.6);
+		}
+
+		&:active {
+			background: $hover-color;
+		}
+
+		&--blocked {
+			opacity: 0.5;
+
+			&:hover {
+				background: transparent;
+			}
+
+			&:active {
+				background: transparent;
+			}
+		}
+	}
+}

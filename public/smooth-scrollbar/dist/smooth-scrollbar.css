@@ -1,0 +1,97 @@
+scrollbar,
+[scrollbar],
+[data-scrollbar] {
+	display: block;
+	position: relative;
+	overflow: scroll;
+}
+scrollbar .scroll-content,
+[scrollbar] .scroll-content,
+[data-scrollbar] .scroll-content {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+}
+scrollbar.scrolling .scroll-content,
+[scrollbar].scrolling .scroll-content,
+[data-scrollbar].scrolling .scroll-content {
+	pointer-events: none;
+}
+scrollbar.scrolling .scroll-content .scroll-content,
+[scrollbar].scrolling .scroll-content .scroll-content,
+[data-scrollbar].scrolling .scroll-content .scroll-content {
+	pointer-events: auto;
+}
+scrollbar .scrollbar-track,
+[scrollbar] .scrollbar-track,
+[data-scrollbar] .scrollbar-track {
+	position: absolute;
+	opacity: 0;
+	z-index: 1;
+	-webkit-transition: opacity 0.5s 1s ease-out, background 0.5s ease-out;
+	transition: opacity 0.5s 1s ease-out, background 0.5s ease-out;
+	background: white;
+}
+scrollbar .scrollbar-track.show,
+[scrollbar] .scrollbar-track.show,
+[data-scrollbar] .scrollbar-track.show,
+scrollbar .scrollbar-track:hover,
+[scrollbar] .scrollbar-track:hover,
+[data-scrollbar] .scrollbar-track:hover {
+	opacity: 1;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+scrollbar .scrollbar-track:active,
+[scrollbar] .scrollbar-track:active,
+[data-scrollbar] .scrollbar-track:hover {
+	background: rgba(222, 222, 222, 0.75);
+}
+scrollbar .scrollbar-track-x,
+[scrollbar] .scrollbar-track-x,
+[data-scrollbar] .scrollbar-track-x {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 8px;
+}
+scrollbar .scrollbar-track-y,
+[scrollbar] .scrollbar-track-y,
+[data-scrollbar] .scrollbar-track-y {
+	top: 0;
+	right: 0;
+	width: 12px;
+	height: 100%;
+}
+
+scrollbar .scrollbar-track-y,
+[scrollbar] .scrollbar-track-y,
+[data-scrollbar] .scrollbar-track-y:hover .scrollbar-thumb {
+	box-shadow: inset 0 0 0 2px rgba(237, 237, 237, 0.75);
+}
+
+scrollbar .scrollbar-thumb,
+[scrollbar] .scrollbar-thumb,
+[data-scrollbar] .scrollbar-thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 12px;
+	height: 8px;
+	box-shadow: inset 0 0 0 2px white;
+	background: rgb(0 170 255);
+	border-radius: 7px;
+	transition: box-shadow 0.5s 0s ease-out;
+}
+
+@media screen and (max-width: 600px) {
+	scrollbar .scrollbar-track.show,
+	[scrollbar] .scrollbar-track.show,
+	[data-scrollbar] .scrollbar-track.show,
+	scrollbar .scrollbar-track:hover,
+	[scrollbar] .scrollbar-track:hover,
+	[data-scrollbar] .scrollbar-track:hover {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %></title>
+		<script src="../js/detectDevice.js" defer></script>
+		<script src="https://kit.fontawesome.com/66a1f65bd3.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="css/detectDevice.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body class="page">
+		<main class="main main--center">
+			<div class="context">
+				<div class="info">
+					<h1 class="form-cnt__header">Sign in</h1>
+					<form action="/login" method="POST" class="form form--login">
+						<% if(info.error){ %>
+						<div class="error">
+							<span class="error__com"><%= info.communicat %></span>
+						</div>
+						<% } %>
+						<div class="input-cnt">
+							<input required type="text" name="username" class="form__input form__input--text" />
+							<span class="info__placeholder">Username</span>
+						</div>
+						<div class="input-cnt">
+							<input required type="password" name="password" class="form__input form__input--text" />
+							<span class="info__placeholder">Password</span>
+						</div>
+						<button class="form__button form__button--submit" type="submit">Sign in</button>
+						<div class="options">
+							For the first time here?
+							<a href="/register" class="mini-link">register me</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

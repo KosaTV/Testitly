@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
+@keyframes closing {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@keyframes loading {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+::selection {
+  background: #00aaff;
+  color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #00aaff;
+  border: 2px solid #f3f3f3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 1rem;
+  background: #33bbff;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* The track NOT covered by the handle. */
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Resizer */
+::-webkit-resizer {
+  background: transparent;
+}
+
+.page {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
+  color: #afafaf;
+  overflow: hidden;
+}
+
+:root {
+  font: 62.5% "Open Sans", "Nanum Gothic", serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page--blocked {
+  overflow: hidden;
+}
+.page--blocked * {
+  display: none;
+}
+.page--blocked .communicat {
+  display: block;
+}
+.page--blocked .communicat__text {
+  display: inherit;
+  opacity: 1;
+}
+
+.communicat {
+  display: none;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+}
+.communicat__text {
+  position: absolute;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00aaff;
+  font-size: 2rem;
+  z-index: 10000;
+  text-align: center;
+  animation: appear 1s 0s ease forwards;
+}
+
+/*# sourceMappingURL=detectDevice.css.map */

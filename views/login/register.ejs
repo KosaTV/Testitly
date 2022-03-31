@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %></title>
+		<script src="../js/detectDevice.js" defer></script>
+		<script src="https://kit.fontawesome.com/66a1f65bd3.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="css/detectDevice.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body class="page">
+		<main class="main main--center">
+			<div class="context">
+				<div class="form-cnt">
+					<h1 class="form-cnt__header">Register</h1>
+					<form action="/register" method="POST" class="form form--register">
+						<fieldset class="form__group form__group--personal-data">
+							<legend class="form__chapter">Personal data</legend>
+							<div class="input-cnt">
+								<input required type="text" class="form__input form__input--text" name="name" />
+								<span class="info__placeholder">Name</span>
+							</div>
+							<div class="input-cnt">
+								<input required type="text" class="form__input form__input--text" name="surname" />
+								<span class="info__placeholder">Surname</span>
+							</div>
+						</fieldset>
+						<fieldset class="form__group form__group--account-data">
+							<legend class="form__chapter">Account data</legend>
+							<div class="input-cnt">
+								<input required minlength="3" maxlength="35" type="text" class="form__input form__input--text" name="username" />
+								<span class="info__placeholder">User name</span>
+							</div>
+							<div class="input-cnt">
+								<input required pattern=".{1,}@.{1,}\..{1,}" type="email" class="form__input form__input--text" name="email" /><span class="info__placeholder">E-mail</span>
+							</div>
+							<div class="input-cnt">
+								<input required pattern="[A-ZĄĆĘŁŃÓŚŹŻ]{1}.{7,}" type="password" class="form__input form__input--text" name="password" />
+								<span class="info__placeholder">Password</span>
+								<span class="info__side-icon"><i class="fas fa-info"></i></span>
+								<span class="info__description">Your password should be <strong>Capitalized</strong> and include at least <strong>7 letters</strong>.</span>
+							</div>
+							<div class="input-cnt input-cnt--hidden">
+								<label class="form__label"
+									>Don't fill this field<input placeholder="If you're not Robot type here nothing" type="hidden" class="form__input" name="hidden"
+								/></label>
+							</div>
+						</fieldset>
+						<button class="form__button form__button--submit" type="submit">Register</button>
+						<div class="options">
+							Already have an account?
+							<a href="/login" class="mini-link">Log in</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

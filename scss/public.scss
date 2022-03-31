@@ -1,0 +1,66 @@
+@import "config";
+
+.public-test {
+	&__test {
+		user-select: none;
+		padding: 2rem;
+		font-size: 2rem;
+		color: map-get($white, "7");
+		border-bottom: 1px solid map-get($white, "2");
+
+		&:hover {
+			background: darken(map-get($white, "1"), 1%);
+		}
+	}
+}
+
+.testing {
+	$this: &;
+
+	.window__content {
+		overflow: auto;
+		height: calc(100% - 43px);
+	}
+
+	&__q-box {
+		margin: 0.5rem;
+		padding: 1rem;
+		color: map-get($white, "5");
+		background: darken(map-get($white, "1"), 1%);
+	}
+
+	&__q-title-box {
+		font-size: 2rem;
+	}
+
+	&__q-answears-box {
+		padding: 0.5rem 1rem;
+
+		#{$this}__label {
+			display: block;
+			margin: 1rem;
+			font-size: 1.75rem;
+
+			#{$this}__checkable {
+				margin: 0.5rem;
+			}
+		}
+	}
+}
+
+.resultat {
+	$this: &;
+	.window__content {
+		min-height: calc(100% - 43px);
+		@include flex-center(column);
+		#{$this}__percent {
+			font-size: 6rem;
+			color: $secondary-color;
+		}
+
+		#{$this}__points {
+			font-size: 3rem;
+			color: map-get($white, "3");
+		}
+	}
+}

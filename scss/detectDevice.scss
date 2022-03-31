@@ -1,0 +1,44 @@
+@import "config", "reset";
+
+.page {
+	&--blocked {
+		overflow: hidden;
+
+		* {
+			display: none;
+		}
+
+		.communicat {
+			display: block;
+
+			&__text {
+				display: inherit;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.communicat {
+	display: none;
+	z-index: 9999;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+
+	&__text {
+		position: absolute;
+		width: 100vw;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $secondary-color;
+		font-size: 2rem;
+		z-index: 10000;
+		text-align: center;
+		animation: appear 1s 0s ease forwards;
+	}
+}

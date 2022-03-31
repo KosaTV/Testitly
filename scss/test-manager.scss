@@ -1,0 +1,640 @@
+@import "config", "mixins";
+
+.test-manager {
+	$this: &;
+
+	.window__content {
+		height: calc(100% - 43px);
+		overflow: auto;
+	}
+
+	.window__tests {
+		.window__test {
+			display: flex;
+			user-select: none;
+			padding: 0.5rem 1.5rem;
+			font-size: 3rem;
+			background: map-get($white, "1");
+			border-bottom: 1px solid map-get($white, "2");
+			align-items: center;
+			justify-content: space-between;
+
+			.window__item-button {
+				@include flex-center;
+				outline: none;
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				margin: 0.1rem;
+				font-size: 1.6rem;
+				border: none;
+				color: map-get($white, "7");
+				background: none;
+
+				&:active {
+					background: $hover-color;
+				}
+			}
+
+			&:active {
+				background: rgba(0, 0, 0, 0.0075);
+			}
+
+			&:first-child {
+				border-top: 1px solid map-get($white, "2");
+			}
+
+			#{$this}__date {
+				display: block;
+				padding: 1;
+				font-size: 2rem;
+			}
+
+			#{$this}__container-btn {
+				@include flex-center;
+
+				.window__item-button {
+					font-size: 2rem;
+				}
+			}
+
+			#{$this}__public-btn {
+				display: flex;
+				align-items: center;
+				width: 45px;
+				height: 17px;
+				background: map-get($white, "3");
+				border-radius: 0.7rem;
+				cursor: pointer;
+				transition: background 0.2s 0s linear, border 0.2s 0s linear;
+
+				&::before {
+					content: "";
+					display: block;
+					width: 60%;
+					height: 137%;
+					background: white;
+					border-radius: 0.5rem;
+					border: 2px solid map-get($white, "3");
+					@include transition-ease;
+				}
+
+				&--active {
+					background: $secondary-color;
+					border-color: $secondary-color;
+					&::before {
+						background: white;
+						border-color: $secondary-color;
+						transform: translateX(67%);
+					}
+				}
+			}
+		}
+	}
+}
+
+.creating-test {
+	.window__content {
+		display: flex;
+		height: calc(100% - 35px);
+		flex-flow: column nowrap;
+		overflow: auto;
+
+		.window__test-title {
+			@include flex-center;
+			position: sticky;
+			width: 100%;
+			top: 0;
+			left: 0;
+			padding: 1rem;
+			gap: 1rem;
+		}
+
+		.window__input {
+			margin: 1rem;
+			width: 60%;
+		}
+
+		.window__solutions {
+			width: 100%;
+			margin: 1rem 0;
+
+			.window__sol-box {
+				position: relative;
+				margin-bottom: 1rem;
+				padding: 2rem 1rem;
+				padding-bottom: 5rem;
+				background: white;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.window__label {
+					display: inline-block;
+					font-size: 1.6rem;
+					margin: 1rem;
+					padding: 1rem;
+
+					.window__checkbox {
+						margin: 0.5rem;
+					}
+				}
+
+				.window__input {
+					&--points {
+						text-align: center;
+						font-size: 2rem;
+						padding: 0.5rem;
+						min-width: 50px;
+						-moz-appearance: textfield;
+						width: 50px;
+
+						&::-webkit-inner-spin-button {
+							-webkit-appearance: none;
+						}
+
+						&::placeholder {
+							font-size: 1.4rem;
+						}
+					}
+				}
+
+				.window__tool-bar {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+
+					.options {
+						display: none;
+					}
+				}
+
+				&-header {
+					display: flex;
+					justify-content: flex-end;
+				}
+
+				.window__box-button {
+					outline: none;
+					border-radius: 50%;
+					width: 30px;
+					height: 30px;
+					margin: 0.2rem;
+					font-size: 1.5rem;
+					border: none;
+					color: map-get($white, "7");
+					background: none;
+
+					&:hover {
+						background: rgba($hover-color, 0.6);
+					}
+
+					&:active {
+						background: $hover-color;
+					}
+				}
+
+				.window__answear {
+					position: relative;
+					padding: 0 1rem;
+
+					.window__ans-button {
+						opacity: 0;
+						position: absolute;
+						top: 50%;
+						left: calc(60% + 30px);
+						transform: translateY(-50%);
+						@extend .window__box-button;
+						@include flex-center;
+						width: 20px;
+						height: 20px;
+					}
+
+					&:hover {
+						.window__ans-button {
+							opacity: 1;
+						}
+					}
+				}
+
+				.window__input {
+					&--title {
+						width: 500px;
+						margin: 1rem;
+					}
+
+					&--option {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+.reader {
+	$this: &;
+	.window__content {
+		height: calc(100% - 43px);
+		overflow: auto;
+	}
+
+	&__box {
+		margin: 1rem;
+		padding: 1rem;
+		padding-right: 6rem;
+		background: rgba($secondary-color, 0.015);
+		position: relative;
+		border-radius: 0.5rem;
+
+		#{$this}__header {
+			font-size: 3rem;
+			color: map-get($white, "9");
+
+			@include media(largeMobile) {
+				font-size: 2rem;
+			}
+		}
+
+		#{$this}__label {
+			font-size: 2rem;
+			color: map-get($white, "7");
+
+			@include media(largeMobile) {
+				font-size: 1.5rem;
+			}
+
+			#{$this}__input {
+				margin: 1rem;
+			}
+
+			&--correct {
+				color: rgb(0, 180, 75);
+			}
+
+			&--bad {
+				color: rgb(180, 15, 0);
+			}
+		}
+
+		#{$this}__info {
+			font-size: 1.5rem;
+
+			@include media(largeMobile) {
+				font-size: 1rem;
+			}
+		}
+
+		#{$this}__type-answear {
+			font-size: 2rem;
+
+			@include media(largeMobile) {
+				font-size: 1.5rem;
+			}
+
+			&--bad {
+				color: rgb(180, 15, 0);
+			}
+
+			&--some-bad {
+				color: #94e216;
+			}
+
+			&--correct {
+				color: rgb(0, 180, 75);
+			}
+		}
+
+		#{$this}__com {
+			display: inline;
+			box-shadow: inset 0 0 2px map-get($white, "7");
+			border-radius: 0.5rem;
+			padding: 0.5rem;
+			font-size: 2rem;
+		}
+
+		#{$this}__points-cnt {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 2.1rem;
+			margin: 0.75rem;
+			color: $secondary-color;
+			padding: 0.75rem;
+			border: 4px solid;
+			border-top: none;
+			border-right: none;
+			border-radius: 50%;
+		}
+	}
+}
+
+.uploader {
+	$this: &;
+	.window__content {
+		position: relative;
+		width: 100%;
+		height: calc(100% - 43px);
+		padding: 1rem;
+
+		#{$this}__input {
+			outline: none;
+			resize: none;
+			width: 100%;
+			height: calc(100% - 60px);
+			color: $secondary-color;
+			border: 1px solid map-get($white, "2");
+			word-wrap: wrap;
+			font-family: "Open Sans";
+
+			&::placeholder {
+				color: map-get($white, "3");
+				font-size: 2rem;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.test-settings {
+	@include flex-center(column, stretch);
+	flex-wrap: nowrap;
+	align-items: stretch;
+
+	.explorer {
+		@include flex-center;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: stretch;
+
+		&__header {
+			@include flex-center;
+		}
+
+		&__content {
+			flex: 1;
+			overflow: auto;
+		}
+
+		&__tab {
+			@include flex-center;
+			font-size: 2rem;
+			padding: 2rem;
+			box-shadow: inset 0 0 1px transparent;
+			flex: 1 1 0;
+			align-self: stretch;
+			cursor: pointer;
+			user-select: none;
+			border-top: none;
+			margin-right: 1px;
+
+			&:hover {
+				color: white;
+				background: $secondary-color;
+			}
+
+			&--active {
+				color: white;
+				background: $secondary-color;
+			}
+		}
+
+		&__tab-icon {
+			margin: 1rem;
+		}
+	}
+}
+
+.solution-settings,
+.test-settings {
+	.content {
+		padding: 1rem;
+		height: calc(100% - 42px);
+		overflow-x: auto;
+
+		.box {
+			display: block;
+			width: auto;
+		}
+	}
+
+	.box-header__header {
+		&--h1 {
+			text-align: center;
+			font-size: 4rem;
+			color: map-get($white, "9");
+		}
+
+		&--h2 {
+			font-size: 2.2rem;
+		}
+
+		&--h3 {
+			font-size: 2rem;
+			color: map-get($white, "6");
+		}
+	}
+
+	.box-content {
+		margin: 1rem;
+
+		&--view {
+			width: 90%;
+		}
+
+		&__header {
+			&--h2 {
+				font-size: 1.7rem;
+				color: map-get($white, "8");
+			}
+		}
+
+		.option {
+			padding: 1rem;
+
+			.info {
+				@include flex-center;
+			}
+		}
+
+		&__link {
+			font-size: 1.5rem;
+			color: $secondary-color;
+			text-decoration: none;
+		}
+
+		&__label {
+			font-size: 1.5rem;
+			color: map-get($white, "8");
+			margin: 1rem;
+			cursor: pointer;
+			@include flex-center(column, nowrap);
+		}
+
+		&__small-text {
+			font-size: 1.2rem;
+			color: map-get($white, "8");
+			max-width: 370px;
+
+			&--info {
+				position: relative;
+				padding: 2rem;
+				border-radius: 0.5rem;
+				border: 1px solid $secondary-color;
+				user-select: none;
+				cursor: pointer;
+
+				.icon {
+					font-size: 1.8rem;
+					position: absolute;
+					top: 5px;
+					left: 5px;
+					color: $secondary-color;
+				}
+
+				&:hover {
+					background: rgba($secondary-color, 0.1);
+				}
+			}
+		}
+
+		.strong {
+			font-size: 1.4rem;
+			color: map-get($white, "8");
+
+			&--info {
+				color: $secondary-color;
+			}
+		}
+
+		.window__input {
+			margin: 0.5rem 0;
+			max-width: 100px;
+			transition: background 0.2s 0s ease;
+
+			&--time {
+				margin: 1rem;
+			}
+
+			&--date {
+				position: relative;
+				margin: 0;
+				z-index: -1;
+			}
+
+			&:disabled {
+				box-shadow: inset 0 0 1px map-get($white, "3");
+				background: rgba(white, 0.5);
+			}
+		}
+	}
+
+	.table {
+		width: 100%;
+		height: 500px;
+		border: 1px solid map-get($white, "4");
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		&__item {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1rem;
+			background: white;
+			color: map-get($white, "8");
+			font-size: 2rem;
+			user-select: none;
+
+			&:not(&:first-child) {
+				border-top: 1px solid map-get($white, "5");
+			}
+
+			&:active {
+				background: none;
+			}
+
+			&:hover {
+				z-index: 1;
+				box-shadow: 0 4px 4px -2px map-get($white, "5"), 0 -4px 4px -2px map-get($white, "5");
+			}
+		}
+
+		.profile {
+			&__img {
+				color: $secondary-color;
+			}
+		}
+
+		.info {
+			&__item {
+				@include flex-center(column, nowrap);
+				margin: 0 0.5rem;
+
+				.info__header {
+					color: map-get($white, "4");
+					font-size: 1.4rem;
+				}
+
+				.info__content {
+					color: map-get($white, "7");
+					font-size: 1;
+				}
+			}
+
+			.options {
+				@include flex-center;
+
+				&__item {
+					@include flex-center;
+					width: 35px;
+					height: 35px;
+					border-radius: 50%;
+					cursor: pointer;
+					&:hover {
+						background: map-get($white, "4");
+					}
+
+					&:active {
+						background: map-get($white, "6");
+					}
+				}
+			}
+		}
+	}
+}
+
+.test-settings {
+	.box {
+		width: 100%;
+		min-height: calc(100vh - 330px);
+		padding: 2rem;
+	}
+
+	.box-content {
+		&__label {
+			margin: 0;
+			@include flex-center(row, flex-start);
+		}
+
+		.window__input--radio {
+			width: 20px;
+			height: 20px;
+			margin: 1rem;
+			box-shadow: none;
+			max-width: auto;
+			min-width: auto;
+			cursor: pointer;
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.loader {
+	@include loader;
+}

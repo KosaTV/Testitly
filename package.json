@@ -1,0 +1,34 @@
+{
+	"name": "testitly",
+	"version": "1.0.0",
+	"description": "Testitly is a tool allows creating and solving tests.",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon ./server/app"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KosaTV/Testitly.git"
+	},
+	"author": "Jakub Chodubski",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/KosaTV/Testitly/issues"
+	},
+	"homepage": "https://github.com/KosaTV/Testitly#readme",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"ejs": "^3.1.6",
+		"express": "^4.17.1",
+		"express-form-data": "^2.0.16",
+		"express-session": "^1.17.2",
+		"mongoose": "^5.12.9",
+		"passport": "^0.4.1",
+		"passport-local": "^1.0.0",
+		"sass": "^1.32.13",
+		"smooth-scrollbar": "^8.6.2"
+	},
+	"devDependencies": {
+		"dotenv": "^16.0.0"
+	}
+}

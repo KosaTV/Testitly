@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
+:root {
+  font: 62.5% "Open Sans", "Nanum Gothic", serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes closing {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@keyframes loading {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+::selection {
+  background: #00aaff;
+  color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #00aaff;
+  border: 2px solid #f3f3f3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 1rem;
+  background: #33bbff;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* The track NOT covered by the handle. */
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Resizer */
+::-webkit-resizer {
+  background: transparent;
+}
+
+.page {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
+  color: #afafaf;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 579px) {
+  .page {
+    background: white;
+    align-items: flex-start;
+  }
+}
+
+.context .form-cnt__header {
+  text-align: center;
+  font-size: 6rem;
+  margin: 1rem 0;
+  color: #f5f5ff;
+}
+@media only screen and (max-width: 579px) {
+  .context .form-cnt__header {
+    color: #00aaff;
+  }
+}
+.context .send {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 1rem;
+}
+.context .form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  padding: 5rem;
+  border-radius: 0.5rem;
+  background: white;
+}
+@media only screen and (max-width: 579px) {
+  .context .form {
+    width: 100%;
+    padding: 1rem;
+    background: none;
+  }
+}
+.context .form__group {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  border: none;
+  font-size: 1.5rem;
+  color: #00aaff;
+}
+.context .form .info .input-cnt {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+.context .form .info .input-cnt--flex {
+  display: flex;
+}
+.context .form .info .input-cnt--flex .info__input {
+  width: 30%;
+  padding: 1rem 1.5rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.context .form .info .input-cnt--flex .info__submit {
+  border-radius: 0.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  outline: none;
+  padding: 1rem;
+  color: white;
+  border: none;
+  background: #00aaff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: background 0.2s 0s ease;
+}
+.context .form .info .input-cnt--flex .info__submit:active {
+  background: #c8c8c8;
+}
+.context .form .info .input-cnt--flex .info__placeholder {
+  left: 2%;
+}
+.context .form .info .input-cnt--flex .info__border {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s 0s ease;
+}
+.context .form .info__placeholder {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  font-size: 2rem;
+  line-height: 0.7;
+  transform: translate(0, -50%);
+  user-select: none;
+  pointer-events: none;
+  background: #faffff;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  height: 20px;
+  transition: transform 0.2s 0s ease;
+}
+.context .form .info__input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #bebebe;
+  font-size: 2.2rem;
+  color: #969696;
+  padding: 1.3rem 1rem;
+  min-width: 200px;
+  width: 100%;
+}
+.context .form .info__input::placeholder {
+  color: #afafaf;
+}
+.context .form .info__input:focus {
+  background: rgba(0, 170, 255, 0.04);
+}
+.context .form .info__input:focus + .info__placeholder {
+  color: #00aaff;
+  transform: translate(-4px, -35px);
+}
+.context .form .info__input:valid + .info__placeholder {
+  color: #00aaff;
+  transform: translate(-10px, -35px);
+}
+.context .form .info__input:focus ~ .info__border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform-origin: left;
+  background: #00aaff;
+  transform: scaleX(1);
+  transition: transform 0.5s 0s ease;
+}
+.context .form .info__description {
+  position: absolute;
+  pointer-events: none;
+  top: 110%;
+  left: 0;
+  opacity: 0;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 10px 0 rgba(30, 30, 30, 0.5);
+  transition: opacity 0.5s 0.2s ease;
+}
+.context .form .info__side-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0.5rem 1rem;
+  background: #00aaff;
+  color: white;
+  border-radius: 0.5rem;
+  margin: 0 1rem;
+  cursor: help;
+}
+.context .form .info__side-icon:hover ~ .info__description {
+  opacity: 1;
+}
+.context .form .input-cnt {
+  position: relative;
+  display: inline-block;
+  margin: 1rem 0;
+  color: #969696;
+}
+.context .form .input-cnt--hidden {
+  display: none;
+}
+.context .form__input--text {
+  outline: none;
+  padding: 1.3rem;
+  border-radius: 0.5rem;
+  border: 1px solid #bebebe;
+  font-size: 2rem;
+}
+.context .form__input--text::placeholder {
+  color: #afafaf;
+}
+.context .form__input--text:focus {
+  border: 1px solid #00aaff;
+}
+.context .form__input--text:focus + .info__placeholder {
+  color: #00aaff;
+  transform: translate(-4px, -35px);
+}
+.context .form__input--text:focus ~ .info__side-icon {
+  opacity: 1;
+}
+.context .form__input--text:valid + .info__placeholder {
+  color: #00aaff;
+  transform: translate(-10px, -35px);
+}
+.context .form__button--submit {
+  outline: none;
+  padding: 1rem 3rem;
+  color: white;
+  border: none;
+  background: #00aaff;
+  width: 20%;
+  border-radius: 0.5rem;
+  min-width: 200px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: background 0.2s 0s ease;
+}
+.context .form__button--submit:active {
+  background: #c8c8c8;
+}
+
+.error {
+  font-size: 1.3rem;
+  margin: 0.2rem;
+  color: red;
+}
+
+.options {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  font-size: 1.4rem;
+  color: #969696;
+}
+
+.mini-link {
+  text-decoration: none;
+  color: #00aaff;
+}
+
+/*# sourceMappingURL=login.css.map */

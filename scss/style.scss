@@ -1,0 +1,150 @@
+@import "config", "reset", "mixins";
+
+@keyframes load-finishing {
+	0% {
+		border-color: map-get($white, "4");
+	}
+
+	100% {
+		border-color: map-get($white, "4");
+		transform: scale(30);
+	}
+}
+
+@keyframes slide-vertically {
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-horizontally {
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.bg-loader {
+	@include flex-center;
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: white;
+	transition: opacity 0.5s 0.4s ease-in-out;
+
+	.loader {
+		width: 50px;
+		height: 50px;
+		border-left-color: $secondary-color;
+	}
+
+	&--finished {
+		opacity: 0;
+
+		.loader {
+			animation: load-finishing 0.9s 0s ease-in-out forwards;
+		}
+	}
+}
+
+.box {
+	@include flex-center(column, nowrap);
+
+	&--main {
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		background: map-get($white, "1");
+		gap: 1rem;
+		padding: 1rem;
+		border-radius: 2rem;
+		opacity: 0;
+		animation: appear 0.5s 0.8s ease-in-out forwards;
+
+		@include media(largeMobile) {
+			@include flex-center;
+			height: 100vh;
+			width: 100vw;
+			border-radius: 0;
+			overflow: auto;
+		}
+	}
+
+	&__logo {
+		user-select: none;
+		pointer-events: none;
+		-webkit-user-drag: none;
+		max-width: 250px;
+		max-height: 250px;
+		border-radius: 2rem;
+	}
+
+	&__button {
+		outline: none;
+		cursor: pointer;
+		border: none;
+		padding: 1rem;
+		width: 250px;
+		height: 250px;
+		font-size: 2.8rem;
+		background: $secondary-color;
+		font-family: inherit;
+		border-radius: 2rem;
+		color: white;
+
+		@include transition-ease;
+
+		&:hover {
+			background: lighten($secondary-color, 7%);
+		}
+
+		&:active {
+			background: map-get($white, "3");
+		}
+	}
+
+	&__tile {
+		opacity: 0;
+		margin: 1rem;
+	}
+
+	&__tile:nth-child(2) {
+		transform: translateY(-120%);
+		animation: appear 0.6s 0.6s ease forwards, slide-vertically 0.6s 0.8s ease forwards;
+	}
+
+	&__tile:last-child {
+		transform: translateX(120%);
+		animation: appear 0.6s 0.6s ease forwards, slide-horizontally 0.6s 0.8s ease forwards;
+	}
+
+	&__tile:nth-child(3) {
+		transform: translateY(120%);
+		animation: appear 0.6s 0.6s ease forwards, slide-horizontally 0.6s 0.8s ease forwards;
+	}
+
+	&__tile:first-child {
+		transform: translateX(-120%);
+		animation: appear 0.6s 0.6s ease forwards, slide-vertically 0.6s 0.8s ease forwards;
+	}
+}
+
+.tests {
+	display: none;
+}

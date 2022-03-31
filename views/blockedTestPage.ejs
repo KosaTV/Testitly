@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %></title>
+		<link rel="stylesheet" href="../css/test.css" />
+		<script defer="defer" src="../js/testAuthentication.js"></script>
+	</head>
+	<body class="page">
+		<form action="/check?tid=<%= id %>" method="POST" class="form form--mini">
+			<section class="info">
+				<header class="info__header"><h2 class="info__title">Test you want connect to is secured a code, if you wanna get the access to this, type required code</h2></header>
+				<div class="input-cnt input-cnt--flex">
+					<input type="text" required name="bonusLock" class="info__input info__input--name" />
+					<label class="info__placeholder">Code</label>
+					<button class="info__submit">Get access</button>
+				</div>
+			</section>
+		</form>
+	</body>
+</html>

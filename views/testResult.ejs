@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Result</title>
+		<link rel="stylesheet" href="../css/test.css" />
+		<script defer="defer" src="../js/sendTest.js"></script>
+	</head>
+	<body class="page">
+		<div class="result">
+			<h1 class="result__name">Your score</h1>
+			<span class="result__points"><%= points %>/<%= maxPoints %></span>
+			<p class="result__percent"><% (points/maxPoints*100).toFixed(1) %></p>
+		</div>
+		<!-- <footer class="footer">Copyright &copy; 2021 All rights reserved</footer> -->
+	</body>
+</html>

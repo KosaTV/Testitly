@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= test.name %></title>
+		<script src="https://kit.fontawesome.com/66a1f65bd3.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../css/test.css" />
+		<script defer="defer" src="../js/sendTest.js"></script>
+		<link href="../smooth-scrollbar/dist/smooth-scrollbar.css" rel="stylesheet" />
+		<script src="../smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+		<script src="../js/styles.js" defer></script>
+	</head>
+	<body class="page">
+		<article class="test">
+			<header class="test__header"><h1 clas="test__title"><%= test.name %></h1></header>
+			<form action="/check" method="POST" novalidate class="form">
+				<section class="info">
+					<div class="input-cnt">
+						<input type="text" required name="authorName" class="info__input info__input--name" />
+						<label class="info__placeholder">name</label>
+						<div class="info__border"></div>
+					</div>
+
+					<div class="input-cnt">
+						<input type="text" required name="authorSurname" class="info__input info__input--surname" />
+						<label class="info__placeholder">surname</label>
+						<div class="info__border"></div>
+					</div>
+				</section>
+				<section class="solutions">
+					<% test.quests.forEach((solution, questNum)=>{ %>
+					<div class="solutions__solution">
+						<div class="header">
+							<div class="header__title"><%- `<span class="order">${questNum+1}.</span>${solution.name}` %></div>
+						</div>
+						<div class="answears">
+							<% if(solution.type === "single") { solution.options.forEach((option, num)=>{ %>
+							<div class="answears__answear">
+								<span class="answears__label">
+									<div class="cnt">
+										<input type="radio" id="<%= `id${questNum+1}-${num+1}` %>" name="quest<%= questNum+1 %>" value="answear<%= num+1 %>" class="answears__input" />
+										<label class="answear-input answear-input--radio" for="<%= `id${questNum+1}-${num+1}` %>"></label>
+									</div>
+
+									<p class="answears__option"><%= option %></p>
+								</span>
+							</div>
+							<% }) } else if(solution.type === "multiple") { solution.options.forEach((option, num)=>{ %>
+							<div class="answears__answear">
+								<span class="answears__label">
+									<div class="cnt">
+										<input type="checkbox" id="<%= `id${questNum+1}-${num+1}` %>" name="quest<%= questNum+1 %>" value="answear<%= num+1 %>" class="answears__input" />
+										<label class="answear-input answear-input--checkbox" for="<%= `id${questNum+1}-${num+1}` %>"><i class="fas fa-check answear-input__mark"></i></label>
+									</div>
+									<p class="answears__option"><%= option %></p>
+								</span>
+							</div>
+							<% }) } else if(solution.type === "written") { solution.options.forEach((option, num)=>{ %>
+							<div class="answears__answear">
+								<div class="input-cnt">
+									<input required type="text" name="quest<%= questNum+1 %>" class="answears__input answears__input--text" />
+									<span class="info__placeholder">Your answear</span>
+									<div class="info__border"></div>
+								</div>
+							</div>
+							<% }) } %>
+						</div>
+					</div>
+					<% }) %>
+				</section>
+				<section class="send">
+					<button class="form__submit">Finish</button>
+				</section>
+			</form>
+		</article>
+	</body>
+</html>

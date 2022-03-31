@@ -1,0 +1,46 @@
+@import "config";
+
+.communicat {
+	.window__content {
+		@include flex-center;
+		height: calc(100% - 43px);
+		font-size: 2rem;
+	}
+}
+
+.select-list {
+	.window__content {
+		min-height: calc(100% - 43px);
+	}
+
+	&__item {
+		position: relative;
+		font-size: 3rem;
+		padding: 0.2rem;
+		border-top: 1px solid map-get($white, "2");
+
+		&:first-child {
+			border: none;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid map-get($white, "2");
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			box-shadow: $system-shadow;
+		}
+
+		&:hover::before {
+			opacity: 1;
+		}
+	}
+}
