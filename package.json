@@ -26,9 +26,8 @@
 		"passport": "^0.4.1",
 		"passport-local": "^1.0.0",
 		"sass": "^1.32.13",
-		"smooth-scrollbar": "^8.6.2"
-	},
-	"devDependencies": {
+		"smooth-scrollbar": "^8.6.2",
 		"dotenv": "^16.0.0"
-	}
+	},
+	"devDependencies": {}
 }
