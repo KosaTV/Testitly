@@ -12,6 +12,7 @@ const loginRouters = require("../routers/loginRouters");
 const bcrypt = require("bcrypt");
 const {checkAuthenticated} = require("../controllers/authenticationControllers");
 const User = require("../models/userSchema");
+const MongoStore = require("connect-mongo")(session);
 
 //initial app
 const app = express();
@@ -40,6 +41,7 @@ app.use(
 	session({
 		cookie: {maxAge: +process.env.EXPIRATION_TIME, secure: true},
 		secret: process.env.SESSION_SECRET,
+		store: new MongoStore({url: dbURL}),
 		rolling: true,
 		resave: true,
 		saveUninitialized: true
