@@ -18,6 +18,8 @@
 	"homepage": "https://github.com/KosaTV/Testitly#readme",
 	"dependencies": {
 		"bcrypt": "^5.0.1",
+		"connect-mongo": "^4.6.0",
+		"dotenv": "^16.0.0",
 		"ejs": "^3.1.6",
 		"express": "^4.17.1",
 		"express-form-data": "^2.0.16",
@@ -26,8 +28,6 @@
 		"passport": "^0.4.1",
 		"passport-local": "^1.0.0",
 		"sass": "^1.32.13",
-		"smooth-scrollbar": "^8.6.2",
-		"dotenv": "^16.0.0"
-	},
-	"devDependencies": {}
+		"smooth-scrollbar": "^8.6.2"
+	}
 }
