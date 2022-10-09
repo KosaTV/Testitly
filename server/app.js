@@ -23,6 +23,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../views"));
+app.set("trust proxy", 1);
 
 //connect to database
 const dbURL = process.env.DB_SECRET;
@@ -37,15 +38,20 @@ mongoose
 
 app.use(
 	session({
+		cookie: {maxAge: +process.env.EXPIRATION_TIME, secure: true},
 		secret: process.env.SESSION_SECRET,
-		resave: false,
-		saveUninitialized: true,
-		cookie: {maxAge: +process.env.EXPIRATION_TIME},
 		rolling: true,
 		resave: true,
-		saveUninitialized: false
+		saveUninitialized: true
 	})
 );
+
+app.use(function (req, res, next) {
+	if (!req.session) {
+		return next(new Error("Oh no"));
+	}
+	next();
+});
 
 //initialize a authentication and session
 app.use(passport.initialize());
