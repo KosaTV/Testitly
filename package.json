@@ -4,7 +4,7 @@
 	"description": "Testitly is a tool allows creating and solving tests.",
 	"main": "app.js",
 	"scripts": {
-		"start": "nodemon ./server/app"
+		"start": "node ./server/app"
 	},
 	"repository": {
 		"type": "git",
