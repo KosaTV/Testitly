@@ -1,3 +1,5 @@
+if (process.env.Node_ENV !== "production") require("dotenv").config();
+const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const universalControllers = require("../controllers/universalControllers");
@@ -10,17 +12,17 @@ const loginRouters = require("../routers/loginRouters");
 const bcrypt = require("bcrypt");
 const {checkAuthenticated} = require("../controllers/authenticationControllers");
 const User = require("../models/userSchema");
-const dotenv = require("dotenv").config();
 
 //initial app
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 //configuration of express
-app.use(express.static("public"));
+app.use(express.static("../public"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "../views"));
 
 //connect to database
 const dbURL = process.env.DB_SECRET;

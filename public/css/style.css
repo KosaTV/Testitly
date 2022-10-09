@@ -16,7 +16,7 @@
   }
 }
 ::selection {
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   color: white;
 }
 
@@ -28,8 +28,8 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: #00aaff;
-  border: 2px solid #f3f3f3;
+  background: hsl(200deg, 100%, 50%);
+  border: 2px solid rgb(243, 243, 243);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -65,7 +65,7 @@
   justify-content: center;
   height: 100vh;
   background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
-  color: #afafaf;
+  color: rgb(175, 175, 175);
   overflow: hidden;
 }
 
@@ -83,10 +83,10 @@
 
 @keyframes load-finishing {
   0% {
-    border-color: #c8c8c8;
+    border-color: rgb(200, 200, 200);
   }
   100% {
-    border-color: #c8c8c8;
+    border-color: rgb(200, 200, 200);
     transform: scale(30);
   }
 }
@@ -125,7 +125,7 @@
 .bg-loader .loader {
   width: 50px;
   height: 50px;
-  border-left-color: #00aaff;
+  border-left-color: hsl(200deg, 100%, 50%);
 }
 .bg-loader--finished {
   opacity: 0;
@@ -148,7 +148,7 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  background: #f5f5ff;
+  background: rgb(245, 245, 255);
   gap: 1rem;
   padding: 1rem;
   border-radius: 2rem;
@@ -183,7 +183,7 @@
   width: 250px;
   height: 250px;
   font-size: 2.8rem;
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   font-family: inherit;
   border-radius: 2rem;
   color: white;
@@ -193,7 +193,7 @@
   background: #24b6ff;
 }
 .box__button:active {
-  background: #e1e1e1;
+  background: rgb(225, 225, 225);
 }
 .box__tile {
   opacity: 0;

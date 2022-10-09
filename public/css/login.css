@@ -28,7 +28,7 @@
   }
 }
 ::selection {
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   color: white;
 }
 
@@ -40,8 +40,8 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: #00aaff;
-  border: 2px solid #f3f3f3;
+  background: hsl(200deg, 100%, 50%);
+  border: 2px solid rgb(243, 243, 243);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -77,7 +77,7 @@
   justify-content: center;
   height: 100vh;
   background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
-  color: #afafaf;
+  color: rgb(175, 175, 175);
   overflow: hidden;
 }
 
@@ -92,11 +92,11 @@
   text-align: center;
   font-size: 6rem;
   margin: 1rem 0;
-  color: #f5f5ff;
+  color: rgb(245, 245, 255);
 }
 @media only screen and (max-width: 579px) {
   .context .form-cnt__header {
-    color: #00aaff;
+    color: hsl(200deg, 100%, 50%);
   }
 }
 .context .send {
@@ -130,7 +130,7 @@
   margin: 1rem 0;
   border: none;
   font-size: 1.5rem;
-  color: #00aaff;
+  color: hsl(200deg, 100%, 50%);
 }
 .context .form .info .input-cnt {
   position: relative;
@@ -154,13 +154,13 @@
   padding: 1rem;
   color: white;
   border: none;
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   font-size: 2.5rem;
   cursor: pointer;
   transition: background 0.2s 0s ease;
 }
 .context .form .info .input-cnt--flex .info__submit:active {
-  background: #c8c8c8;
+  background: rgb(200, 200, 200);
 }
 .context .form .info .input-cnt--flex .info__placeholder {
   left: 2%;
@@ -179,7 +179,6 @@
   transform: translate(0, -50%);
   user-select: none;
   pointer-events: none;
-  background: #faffff;
   border-radius: 0.5rem;
   padding: 0.2rem;
   height: 20px;
@@ -188,25 +187,25 @@
 .context .form .info__input {
   outline: none;
   border: none;
-  border-bottom: 1px solid #bebebe;
+  border-bottom: 1px solid rgb(190, 190, 190);
   font-size: 2.2rem;
-  color: #969696;
+  color: rgb(150, 150, 150);
   padding: 1.3rem 1rem;
   min-width: 200px;
   width: 100%;
 }
 .context .form .info__input::placeholder {
-  color: #afafaf;
+  color: rgb(175, 175, 175);
 }
 .context .form .info__input:focus {
   background: rgba(0, 170, 255, 0.04);
 }
 .context .form .info__input:focus + .info__placeholder {
-  color: #00aaff;
+  color: hsl(200deg, 100%, 50%);
   transform: translate(-4px, -35px);
 }
 .context .form .info__input:valid + .info__placeholder {
-  color: #00aaff;
+  color: hsl(200deg, 100%, 50%);
   transform: translate(-10px, -35px);
 }
 .context .form .info__input:focus ~ .info__border {
@@ -216,7 +215,7 @@
   width: 100%;
   height: 2px;
   transform-origin: left;
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   transform: scaleX(1);
   transition: transform 0.5s 0s ease;
 }
@@ -229,7 +228,7 @@
   padding: 0.5rem;
   background: white;
   border-radius: 0.5rem;
-  box-shadow: 0px 3px 10px 0 rgba(30, 30, 30, 0.5);
+  box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.25);
   transition: opacity 0.5s 0.2s ease;
 }
 .context .form .info__side-icon {
@@ -238,7 +237,7 @@
   right: 0;
   transform: translateY(-50%);
   padding: 0.5rem 1rem;
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   color: white;
   border-radius: 0.5rem;
   margin: 0 1rem;
@@ -251,7 +250,7 @@
   position: relative;
   display: inline-block;
   margin: 1rem 0;
-  color: #969696;
+  color: rgb(150, 150, 150);
 }
 .context .form .input-cnt--hidden {
   display: none;
@@ -260,24 +259,24 @@
   outline: none;
   padding: 1.3rem;
   border-radius: 0.5rem;
-  border: 1px solid #bebebe;
+  border: 1px solid rgb(190, 190, 190);
   font-size: 2rem;
 }
 .context .form__input--text::placeholder {
-  color: #afafaf;
+  color: rgb(175, 175, 175);
 }
 .context .form__input--text:focus {
-  border: 1px solid #00aaff;
+  border: 1px solid hsl(200deg, 100%, 50%);
 }
 .context .form__input--text:focus + .info__placeholder {
-  color: #00aaff;
+  color: hsl(200deg, 100%, 50%);
   transform: translate(-4px, -35px);
 }
 .context .form__input--text:focus ~ .info__side-icon {
   opacity: 1;
 }
 .context .form__input--text:valid + .info__placeholder {
-  color: #00aaff;
+  color: hsl(200deg, 100%, 50%);
   transform: translate(-10px, -35px);
 }
 .context .form__button--submit {
@@ -285,7 +284,7 @@
   padding: 1rem 3rem;
   color: white;
   border: none;
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   width: 20%;
   border-radius: 0.5rem;
   min-width: 200px;
@@ -294,7 +293,7 @@
   transition: background 0.2s 0s ease;
 }
 .context .form__button--submit:active {
-  background: #c8c8c8;
+  background: rgb(200, 200, 200);
 }
 
 .error {
@@ -310,12 +309,12 @@
   justify-content: center;
   margin: 1rem;
   font-size: 1.4rem;
-  color: #969696;
+  color: rgb(150, 150, 150);
 }
 
 .mini-link {
   text-decoration: none;
-  color: #00aaff;
+  color: hsl(200deg, 100%, 50%);
 }
 
 /*# sourceMappingURL=login.css.map */

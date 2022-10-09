@@ -1084,9 +1084,9 @@ testManager.window.addEventListener("click", async e => {
 		infoTab.classList.add("explorer__tab", "explorer__tab--info");
 		accessTab.classList.add("explorer__tab", "explorer__tab--access");
 
-		confTab.innerHTML = `Configuration <i class="explorer__tab-icon fas fa-tools"></i>`;
-		infoTab.innerHTML = `Information <i class="explorer__tab-icon fas fa-info"></i>`;
-		accessTab.innerHTML = `Access <i class="explorer__tab-icon fas fa-share-alt"></i>`;
+		confTab.innerHTML = `<span class="explorer__tab-text">Configuration</span> <i class="explorer__tab-icon fas fa-tools"></i>`;
+		infoTab.innerHTML = `<span class="explorer__tab-text">Information</span> <i class="explorer__tab-icon fas fa-info"></i>`;
+		accessTab.innerHTML = `<span class="explorer__tab-text">Access</span> <i class="explorer__tab-icon fas fa-share-alt"></i>`;
 
 		header.appendChild(confTab);
 		header.appendChild(accessTab);
@@ -1227,7 +1227,7 @@ testManager.window.addEventListener("click", async e => {
 							${person.name} ${person.surname}
 						</span>
 					</div>
-					<div class="info">
+					<div class="info info--person">
 						<span class="info__item info__item--time">
 							<div class="info__header">Time</div>
 							<div class="info__content">${person.time}</div>

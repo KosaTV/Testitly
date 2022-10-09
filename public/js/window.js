@@ -4,7 +4,7 @@ class Window {
 		this.width = width;
 		this.height = height;
 		this.left = window.innerWidth / 2 - (title * window.innerWidth) / 100 / 2;
-		this.top = window.innerHeight / 2 - (title * window.innerWidth) / 100 / 2;
+		this.top = window.innerHeight / 2 - (title * window.innerHeight) / 100 / 2;
 		this.window = document.createElement("div");
 		this.content = document.createElement("div");
 		this.header = document.createElement("div");
@@ -16,6 +16,9 @@ class Window {
 		this.posX = null;
 		this.posY = null;
 		this.maximalize = false;
+		window.onresize = () => {
+			this.setResponsive();
+		};
 
 		const defaultOptions = {
 			maximizable: true,
@@ -29,12 +32,17 @@ class Window {
 		this.config();
 	}
 
-	styling() {
+	setResponsive() {
 		if (DEVICE_ENVIROMENT === "MOBILE") {
-			this.makeMaximalize();
+			this.window.style.top = 0;
+			this.window.style.left = 0;
+			this.window.classList.add("window--max");
 			this.options.maximizable = false;
 		}
+	}
 
+	styling() {
+		this.setResponsive();
 		this.window.classList.add("window");
 		this.window.style.width = `${this.width}%`;
 		this.window.style.height = `${this.height}%`;

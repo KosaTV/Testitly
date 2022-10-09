@@ -21,7 +21,8 @@ const removeError = inputCnt => {
 };
 
 solutions.addEventListener("click", e => {
-	const target = e.target.closest(".answears__label");
+	const target = e.target.closest(".answears__answear");
+
 	if (target) {
 		const input = target.querySelector(".answears__input");
 		input.click();
@@ -106,7 +107,7 @@ form.onsubmit = e => {
 							addError(surnameInput.parentElement, "Surname is required");
 						}
 
-						submit.insertAdjacentHTML("beforebegin", `<span class="error">Please, fill fields with name and surname</span>`);
+						submit.insertAdjacentHTML("beforebegin", `<span class="error">Please, the fill fields with name and surname</span>`);
 					}
 				}
 			})
@@ -125,6 +126,6 @@ form.onsubmit = e => {
 		if (!surnameInput.value.length) {
 			addError(surnameInput.parentElement, "Surname is required");
 		}
-		submit.insertAdjacentHTML("beforebegin", `<span class="error">Please, fill fields with name and surname</span>`);
+		submit.insertAdjacentHTML("beforebegin", `<span class="error">Please, fill the fields with name and surname</span>`);
 	}
 };

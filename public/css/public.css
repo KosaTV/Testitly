@@ -16,7 +16,7 @@
   }
 }
 ::selection {
-  background: #00aaff;
+  background: hsl(200deg, 100%, 50%);
   color: white;
 }
 
@@ -28,8 +28,8 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: #00aaff;
-  border: 2px solid #f3f3f3;
+  background: hsl(200deg, 100%, 50%);
+  border: 2px solid rgb(243, 243, 243);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -65,7 +65,7 @@
   justify-content: center;
   height: 100vh;
   background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
-  color: #afafaf;
+  color: rgb(175, 175, 175);
   overflow: hidden;
 }
 
@@ -73,8 +73,8 @@
   user-select: none;
   padding: 2rem;
   font-size: 2rem;
-  color: #969696;
-  border-bottom: 1px solid #f1f1f1;
+  color: rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(241, 241, 241);
 }
 .public-test__test:hover {
   background: #f0f0ff;
@@ -87,7 +87,7 @@
 .testing__q-box {
   margin: 0.5rem;
   padding: 1rem;
-  color: #bebebe;
+  color: rgb(190, 190, 190);
   background: #f0f0ff;
 }
 .testing__q-title-box {
@@ -114,11 +114,11 @@
 }
 .resultat .window__content .resultat__percent {
   font-size: 6rem;
-  color: #00aaff;
+  color: hsl(200deg, 100%, 50%);
 }
 .resultat .window__content .resultat__points {
   font-size: 3rem;
-  color: #e1e1e1;
+  color: rgb(225, 225, 225);
 }
 
 /*# sourceMappingURL=public.css.map */

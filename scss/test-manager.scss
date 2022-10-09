@@ -19,6 +19,10 @@
 			align-items: center;
 			justify-content: space-between;
 
+			@include media(mobile) {
+				font-size: 2.25rem;
+			}
+
 			.window__item-button {
 				@include flex-center;
 				outline: none;
@@ -48,10 +52,19 @@
 				display: block;
 				padding: 1;
 				font-size: 2rem;
+
+				@include media(mobile) {
+					font-size: 1.5rem;
+				}
 			}
 
 			#{$this}__container-btn {
 				@include flex-center;
+				gap: 1rem 0;
+				justify-content: flex-end;
+
+				@include media(mobile) {
+				}
 
 				.window__item-button {
 					font-size: 2rem;
@@ -379,6 +392,7 @@
 
 		&__tab {
 			@include flex-center;
+			flex-direction: column;
 			font-size: 2rem;
 			padding: 2rem;
 			box-shadow: inset 0 0 1px transparent;
@@ -388,6 +402,13 @@
 			user-select: none;
 			border-top: none;
 			margin-right: 1px;
+			$this: &;
+
+			&-text {
+				@include media(mobile) {
+					display: none;
+				}
+			}
 
 			&:hover {
 				color: white;
@@ -455,6 +476,10 @@
 
 			.info {
 				@include flex-center;
+
+				&--person {
+					justify-content: space-around;
+				}
 			}
 		}
 

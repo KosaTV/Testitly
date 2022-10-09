@@ -9,14 +9,20 @@
 }
 
 .select-list {
+	@include flex-center;
+
 	.window__content {
+		@include flex-center;
 		min-height: calc(100% - 43px);
+		width: 100%;
 	}
 
 	&__item {
 		position: relative;
 		font-size: 3rem;
 		padding: 0.2rem;
+		text-align: center;
+		max-height: 50px;
 		border-top: 1px solid map-get($white, "2");
 
 		&:first-child {
