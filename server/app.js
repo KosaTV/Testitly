@@ -39,11 +39,11 @@ mongoose
 
 app.use(
 	session({
-		cookie: {maxAge: +process.env.EXPIRATION_TIME, secure: true},
+		cookie: {maxAge: +process.env.EXPIRATION_TIME},
 		secret: process.env.SESSION_SECRET,
-		store: new MongoStore({url: dbURL}),
-		rolling: true,
 		resave: true,
+		rolling: true,
+		store: new MongoStore({url: dbURL}),
 		saveUninitialized: true
 	})
 );
