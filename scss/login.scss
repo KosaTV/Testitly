@@ -2,7 +2,6 @@
 
 .page {
 	@include media(largeMobile) {
-		background: white;
 		align-items: flex-start;
 	}
 }
@@ -12,11 +11,8 @@
 		text-align: center;
 		font-size: 6rem;
 		margin: 1rem 0;
-		color: map-get($white, "1");
-
-		@include media(largeMobile) {
-			color: $secondary-color;
-		}
+		font-weight: 400;
+		color: $secondary-color;
 	}
 
 	.send {
@@ -28,15 +24,53 @@
 
 	.form {
 		@include flex-center(column);
-		width: 500px;
-		padding: 5rem;
-		border-radius: 0.5rem;
+
+		padding: 12.5rem 15rem;
 		background: white;
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+		border-radius: 25px;
+
+		@include media(tablet) {
+			box-shadow: none;
+		}
 
 		@include media(largeMobile) {
 			width: 100%;
 			padding: 1rem;
 			background: none;
+			box-shadow: none;
+		}
+
+		&__double-row {
+			@include flex-center(column);
+
+			&:first-child {
+				padding-bottom: 6.4rem;
+			}
+		}
+
+		@include media(pc) {
+			align-items: stretch;
+
+			&__double-row {
+				@include flex-center(row);
+				flex-grow: 1;
+				gap: 3.2rem;
+
+				&:first-child {
+					padding-bottom: 0;
+				}
+
+				.input-cnt {
+					@include flex-center;
+					margin-top: 6.4rem;
+				}
+			}
+			.form__input {
+				&--text {
+					width: 100%;
+				}
+			}
 		}
 
 		&__group {
@@ -56,22 +90,26 @@
 				top: 110%;
 				left: 0;
 				opacity: 0;
-				padding: 0.5rem;
+				padding: 1rem;
+				margin: 0.5rem 0;
 				background: white;
-				border-radius: 0.5rem;
-				box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.25);
+				border-radius: 0.75rem;
+				box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.25);
 				transition: opacity 0.5s 0.2s ease;
 			}
 
 			&__side-icon {
+				@include flex-center;
 				position: absolute;
 				top: 50%;
 				right: 0;
+				width: 32px;
+				height: 32px;
 				transform: translateY(-50%);
 				padding: 0.5rem 1rem;
 				background: $secondary-color;
 				color: white;
-				border-radius: 0.5rem;
+				border-radius: 0.75rem;
 				margin: 0 1rem;
 				cursor: help;
 				&:hover {
@@ -85,8 +123,10 @@
 		.input-cnt {
 			position: relative;
 			display: inline-block;
-			margin: 1rem 0;
 			color: map-get($white, "7");
+			&:not(&:first-child) {
+				margin-top: 6.4rem;
+			}
 
 			&--hidden {
 				display: none;
@@ -95,9 +135,13 @@
 
 		&__input--text {
 			outline: none;
+			width: 300px;
+			height: 50px;
+			border: none;
 			padding: 1.3rem;
-			border-radius: 0.5rem;
-			border: 1px solid map-get($white, "5");
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+			border: 3px solid transparent;
+			border-radius: 10px;
 			font-size: 2rem;
 
 			&::placeholder {
@@ -105,12 +149,12 @@
 			}
 
 			&:focus {
-				border: 1px solid $secondary-color;
+				border-color: $secondary-color;
 			}
 
 			&:focus + .info__placeholder {
 				color: $secondary-color;
-				transform: translate(-4px, -35px);
+				transform: translate(-15px, -55px);
 			}
 
 			&:focus ~ .info__side-icon {
@@ -119,27 +163,45 @@
 
 			&:valid + .info__placeholder {
 				color: $secondary-color;
-				transform: translate(-10px, -35px);
+				transform: translate(-15px, -55px);
+			}
+
+			&:valid:not(&:focus) + .info__placeholder {
+				color: black;
+			}
+
+			&:invalid:not(&:focus, &:placeholder-shown) + .info__placeholder {
+				color: $danger-color;
+				transform: translate(-15px, -55px);
 			}
 		}
 
 		&__button--submit {
 			outline: none;
 			padding: 1rem 3rem;
+			margin-top: 4.8rem;
 			color: white;
 			border: none;
 			background: $secondary-color;
-			width: 20%;
-			border-radius: 0.5rem;
-			min-width: 200px;
+			min-width: 300px;
+			height: 50px;
 			font-size: 2.5rem;
+			font-family: "Inter";
+			font-weight: 400;
 			cursor: pointer;
 			transition: background 0.2s 0s ease;
+			box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+			border-radius: 10px;
 
 			&:active {
 				background: map-get($white, "4");
 			}
 		}
+	}
+
+	.info {
+		@include flex-center(column);
+		gap: 3.2rem;
 	}
 }
 
@@ -157,6 +219,9 @@
 }
 
 .mini-link {
+	@include flex-center;
+	font-size: 1.75rem;
+	height: 64px;
 	text-decoration: none;
 	color: $secondary-color;
 }

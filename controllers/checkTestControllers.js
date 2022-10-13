@@ -135,10 +135,10 @@ const openTest = async (req, res) => {
 						res.render("testMainPage", {test});
 					}
 				} else {
-					res.render("testNotAvailable", {errorInfo: "Test isn't available"});
+					res.render("testNotAvailable", {errorInfo: "Test is not available"});
 				}
 			} else {
-				res.render("testNotAvailable", {errorInfo: "You used all tries to solve this test"});
+				res.render("testNotAvailable", {errorInfo: "All tries was used to solve this test"});
 			}
 		}
 	} catch {

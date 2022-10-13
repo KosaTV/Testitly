@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 @keyframes closing {
   0% {
@@ -16,31 +16,31 @@
   }
 }
 ::selection {
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
   color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: hsl(200deg, 100%, 50%);
-  border: 2px solid rgb(243, 243, 243);
+  background: hsl(210deg, 100%, 50%);
+  border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   border-radius: 1rem;
-  background: #33bbff;
+  background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 1rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: white;
 }
 
 /* The track NOT covered by the handle. */
@@ -64,8 +64,9 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
-  color: rgb(175, 175, 175);
+  color: rgb(0, 0, 0);
+}
+.page--main {
   overflow: hidden;
 }
 
@@ -114,7 +115,7 @@
 }
 .resultat .window__content .resultat__percent {
   font-size: 6rem;
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
 }
 .resultat .window__content .resultat__points {
   font-size: 3rem;

@@ -63,14 +63,13 @@
 	@include flex-center(column, nowrap);
 
 	&--main {
+		-webkit-user-drag: none;
 		overflow: hidden;
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		flex-flow: column nowrap;
+		flex-flow: row nowrap;
 		justify-content: flex-start;
 		align-items: center;
-		background: map-get($white, "1");
+		background: #ffffff;
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
 		gap: 1rem;
 		padding: 1rem;
 		border-radius: 2rem;
@@ -103,23 +102,23 @@
 		width: 250px;
 		height: 250px;
 		font-size: 2.8rem;
-		background: $secondary-color;
+		background: white;
 		font-family: inherit;
 		border-radius: 2rem;
-		color: white;
+		color: $secondary-color;
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
 
 		@include transition-ease;
 
 		&:hover {
-			background: lighten($secondary-color, 7%);
-		}
-
-		&:active {
-			background: map-get($white, "3");
+			background: $secondary-color;
+			color: white;
 		}
 	}
 
 	&__tile {
+		-webkit-user-drag: none;
+		-webkit-user-select: none;
 		opacity: 0;
 		margin: 1rem;
 	}

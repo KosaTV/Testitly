@@ -8,11 +8,16 @@ const testManagerUploadButton = document.createElement("button");
 const testManagerSearchField = document.createElement("input");
 testManagerSearchField.type = "text";
 testManagerSearchField.placeholder = "Search a test";
+testManagerSearchField.classList.add("window__input");
 testManagerCreateButton.classList.add("window__button", "window__button--create");
 testManagerRefreshButton.classList.add("window__button", "window__button--ico", "window__button--refresh");
 testManagerUploadButton.classList.add("window__button", "window__button--ico", "window__button--upload");
-testManagerSearchField.classList.add("window__input");
-testManagerCreateButton.innerHTML = "Create test";
+testManagerCreateButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 14V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H10V5H5V19H19V14H21Z" fill="white"/>
+<path d="M21 7H17V3H15V7H11V9H15V13H17V9H21V7Z" fill="white"/>
+</svg>
+
+`;
 testManagerRefreshButton.innerHTML = `<i class="fas fa-sync-alt"></i>`;
 testManagerUploadButton.innerHTML = `<i class="fas fa-upload"></i>`;
 const testManagerTopBar = document.createElement("div");
@@ -228,7 +233,7 @@ testManager.read = (filter = {}) => {
 				testName.classList.add("test-manager__name");
 				testDate.classList.add("test-manager__date");
 				test.dataset.id = config._id;
-				testDate.innerHTML = `Created at: ${config.createdAt.slice(0, 10)} ${config.createdAt.substring(11, 19)}`;
+				testDate.innerHTML = `${config.createdAt.slice(8, 10)}-${config.createdAt.slice(5, 7)}-${config.createdAt.slice(0, 4)}`;
 				test.classList.add("window__test");
 				testName.textContent = config.name;
 				testInfo.appendChild(testName);
@@ -1130,23 +1135,20 @@ testManager.window.addEventListener("click", async e => {
 				`
 			<div class="box">
 				<div class="box-header">
-					<h1 class="box-header__header box-header__header--h1">Choose access option to your test</h1>
+					<h1 class="box-header__header box-header__header--h1">Test Access</h1>
 				</div>
 					<div class="box-content">
 
 					<div class="option">
 						<h2 class="box-content__header box-content__header--h3">Link</h2>
-						<h3 class="box-content__label">Test will active at this link for everyone:</h3>
+						<h3 class="box-content__label">Test will be active at this link for everyone:</h3>
 						<a class="box-content__link" target="_blank" href=${link}>${falseLink}</a>
 					</div>
 
 					<div class="option">
 					<h2 class="box-content__header box-content__header--h3">Code</h2>
-						<p class="box-content__small-text box-content__small-text--info">
-							<i class="fas fa-info-circle icon"></i>You can set the bonus lock, by setting a code for your test. Everyone, who has a link <strong class="strong">will need also this code</strong>
-						</p>
 						<label class="box-content__label">Test will be active for everyone, who knows this code: <input ${checked} class="window__input window__input--set-test-code window__input--radio" type="checkbox" name="bonusLockTest" value="${!!checked}"></label>
-						<span class="info"><input type="text" class="window__input window__input--test-code" name="code" placeholder="code" ${disabled} value="${value}"></span>
+						<span class="info"><input type="text" class="window__input window__input--test-code" name="code" placeholder="Enter your code" ${disabled} value="${value}"></span>
 					</div>
 				</div>
 				<button class="window__button window__button--save">Save</button>
@@ -1161,18 +1163,15 @@ testManager.window.addEventListener("click", async e => {
 				`
 				<div class="box">
 					<div class="box-header">
-						<h1 class="box-header__header box-header__header--h1">Configure your test</h1>
+						<h1 class="box-header__header box-header__header--h1">Test Configuration</h1>
 					</div>
 						<div class="box-content">
 						<div class="option">
 							<h2 class="box-content__header box-content__header--h2">Test time</h2>
-							<p class="box-content__small-text box-content__small-text--info">
-							<i class="fas fa-info-circle icon"></i>You can set the time in your test, by setting time for your test, everyone, who starts test, will have defined time to solve it. <strong class="strong">Each Person will have same time</strong>, not dependly, when they started.
-							</p>
 							<span class="info">
 								<div>
 									<h3 class="box-content__header box-content__header--h3">For</h3>
-									<input type="text" class="window__input window__input--test-start-time window__input--time" name="testStartTime" placeholder="MM:SS" value="${addZero(
+									<input type="text" class="window__input window__input--test-start-time window__input--time" name="testStartTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours()
 									)}:${addZero(new Date().getMinutes())}" >
 									<input type="text" class="window__input window__input--test-start-date window__input--date" name="testStartDate" placeholder="month/day/year" value="${addZero(
@@ -1183,7 +1182,7 @@ testManager.window.addEventListener("click", async e => {
 							<span class="info">
 								<div>
 									<h3 class="box-content__header box-content__header--h3">To</h3>
-									<input type="text" class="window__input window__input--test-end-time window__input--time" name="testEndTime" placeholder="MM:SS" value="${addZero(
+									<input type="text" class="window__input window__input--test-end-time window__input--time" name="testEndTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours() + 1
 									)}:${addZero(new Date().getMinutes())}">
 									<input type="text" class="window__input window__input--test-end--date window__input--date" name="testEndDate" placeholder="month/day/year" value="${addZero(
@@ -1194,10 +1193,6 @@ testManager.window.addEventListener("click", async e => {
 						</div>
 						<div class="option">
 							<h2 class="box-content__header box-content__header--h2">Limited Solutions Count</h2>
-							<p class="box-content__small-text box-content__small-text--info">
-							<i class="fas fa-info-circle icon"></i>If you don't wanna to each person can solve your test unlimited amount of times, you can set the number of solutions of each person, for this test, below.
-								<strong class="strong">0 represents unlimited amount of times.</strong> 
-							</p>
 							<span class="info"><input type="text" class="window__input window__input--test-solutions-num" name="solutionsCount" placeholder="Solutions number" value="0"></span>
 						</div>
 					</div>
@@ -1229,15 +1224,29 @@ testManager.window.addEventListener("click", async e => {
 					</div>
 					<div class="info info--person">
 						<span class="info__item info__item--time">
-							<div class="info__header">Time</div>
+							<div class="info__header">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M22.1484 9.65625H16.1484C16.0453 9.65625 15.9609 9.74062 15.9609 9.84375V10.9688C15.9609 11.0719 16.0453 11.1562 16.1484 11.1562H22.1484C22.2516 11.1562 22.3359 11.0719 22.3359 10.9688V9.84375C22.3359 9.74062 22.2516 9.65625 22.1484 9.65625ZM19.0078 12.8438H16.1484C16.0453 12.8438 15.9609 12.9281 15.9609 13.0312V14.1562C15.9609 14.2594 16.0453 14.3438 16.1484 14.3438H19.0078C19.1109 14.3438 19.1953 14.2594 19.1953 14.1562V13.0312C19.1953 12.9281 19.1109 12.8438 19.0078 12.8438ZM11.1867 7.55859H10.1719C10.0266 7.55859 9.90936 7.67578 9.90936 7.82109V13.6336C9.90936 13.718 9.94921 13.7953 10.0172 13.8445L13.507 16.3898C13.6242 16.4742 13.7883 16.4508 13.8726 16.3336L14.475 15.5109V15.5086C14.5594 15.3914 14.5336 15.2273 14.4164 15.143L11.4469 12.9961V7.82109C11.4492 7.67578 11.3297 7.55859 11.1867 7.55859V7.55859Z" fill="#B3B3B3"/>
+							<path d="M18.8625 15.7944H17.5078C17.3766 15.7944 17.2524 15.8623 17.182 15.9748C16.8844 16.4459 16.5375 16.8819 16.1391 17.2803C15.4524 17.967 14.6531 18.5061 13.7649 18.8811C12.8438 19.2701 11.8664 19.467 10.8586 19.467C9.84845 19.467 8.87111 19.2701 7.95236 18.8811C7.06408 18.5061 6.26486 17.967 5.57814 17.2803C4.89142 16.5936 4.35236 15.7944 3.97736 14.9061C3.5883 13.9873 3.39142 13.01 3.39142 11.9998C3.39142 10.9897 3.5883 10.0147 3.97736 9.09359C4.35236 8.2053 4.89142 7.40609 5.57814 6.71937C6.26486 6.03265 7.06408 5.49359 7.95236 5.11859C8.87111 4.72952 9.8508 4.53265 10.8586 4.53265C11.8688 4.53265 12.8461 4.72952 13.7649 5.11859C14.6531 5.49359 15.4524 6.03265 16.1391 6.71937C16.5375 7.11781 16.8844 7.55374 17.182 8.02484C17.2524 8.13734 17.3766 8.20531 17.5078 8.20531H18.8625C19.0242 8.20531 19.1274 8.03655 19.0547 7.89359C17.5266 4.85374 14.4281 2.87796 10.9688 2.83812C5.90392 2.77484 1.69689 6.92093 1.68752 11.9811C1.67814 17.0506 5.78673 21.1639 10.8563 21.1639C14.3602 21.1639 17.5102 19.1811 19.0547 16.1061C19.1274 15.9631 19.0219 15.7944 18.8625 15.7944V15.7944Z" fill="#B3B3B3"/>
+							</svg>							
+							</div>
 							<div class="info__content">${person.time}</div>
 						</span>
 						<span class="info__item info__item--points">
-							<div class="info__header">Points</div>
+							<div class="info__header"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M20.68 9.27L20.69 9.21C20.7283 9.06746 20.7332 8.91802 20.7043 8.77328C20.6755 8.62854 20.6137 8.49239 20.5238 8.37537C20.4339 8.25836 20.3182 8.16363 20.1857 8.09853C20.0533 8.03344 19.9076 7.99972 19.76 8H17L17.7 5.21C17.7362 5.06679 17.7392 4.91722 17.709 4.77266C17.6787 4.62809 17.6158 4.49233 17.5252 4.37569C17.4346 4.25904 17.3186 4.16458 17.186 4.09949C17.0534 4.03439 16.9077 4.00037 16.76 4C16.31 4 15.93 4.3 15.82 4.73L15 8H11L11.7 5.21C11.7362 5.06679 11.7392 4.91722 11.709 4.77266C11.6787 4.62809 11.6158 4.49233 11.5252 4.37569C11.4346 4.25904 11.3186 4.16458 11.186 4.09949C11.0534 4.03439 10.9077 4.00037 10.76 4C10.31 4 9.93003 4.3 9.82003 4.73L9.00003 8H5.76003C5.31003 8 4.92003 8.3 4.82003 8.73L4.80003 8.79C4.65003 9.41 5.11003 10 5.74003 10H8.50003L7.50003 14H4.26003C3.81003 14 3.43003 14.3 3.32003 14.73L3.30003 14.79C3.15003 15.41 3.61003 16 4.24003 16H7.00003L6.30003 18.79C6.15003 19.41 6.61003 20 7.24003 20C7.69003 20 8.07003 19.7 8.18003 19.27L9.00003 16H13L12.3 18.79C12.15 19.41 12.61 20 13.24 20C13.69 20 14.07 19.7 14.18 19.27L15 16H18.24C18.69 16 19.07 15.7 19.18 15.27L19.19 15.21C19.2254 15.0669 19.2278 14.9176 19.1972 14.7733C19.1666 14.6291 19.1037 14.4936 19.0132 14.3772C18.9228 14.2608 18.8071 14.1663 18.6749 14.101C18.5427 14.0357 18.3975 14.0011 18.25 14H15.5L16.5 10H19.74C20.19 10 20.58 9.7 20.68 9.27V9.27ZM13.5 14H9.50003L10.5 10H14.5L13.5 14Z" fill="#B3B3B3"/>
+							</svg>
+							
+							
+							</div>
 							<div class="info__content">${person.points}/${person.maxPoints}</div>
 						</span>
 						<span class="info__item info__item--points">
-							<div class="info__header">Percents</div>
+							<div class="info__header"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M5.91598 1.57218C9.95665 1.0736 14.0433 1.0736 18.084 1.57218C18.7267 1.65503 19.3169 1.97003 19.7435 2.45783C20.17 2.94563 20.4035 3.57257 20.4 4.22058V21.9002C20.4 22.0524 20.3614 22.2022 20.2878 22.3354C20.2142 22.4687 20.108 22.5811 19.9791 22.6621C19.8502 22.7432 19.7029 22.7902 19.5509 22.7988C19.3989 22.8074 19.2472 22.7773 19.11 22.7114L15.75 21.0986L12.39 22.7114C12.2683 22.7699 12.135 22.8003 12 22.8003C11.865 22.8003 11.7317 22.7699 11.61 22.7114L8.24998 21.0986L4.88998 22.7114C4.75277 22.7773 4.60107 22.8074 4.44908 22.7988C4.29708 22.7902 4.14975 22.7432 4.02088 22.6621C3.892 22.5811 3.78579 22.4687 3.71218 22.3354C3.63856 22.2022 3.59996 22.0524 3.59998 21.9002V4.22058C3.59998 2.89698 4.56718 1.73898 5.91598 1.57218ZM16.536 8.73618C16.695 8.56557 16.7815 8.33991 16.7774 8.10675C16.7733 7.87359 16.6788 7.65112 16.5139 7.48623C16.349 7.32133 16.1266 7.22688 15.8934 7.22277C15.6602 7.21865 15.4346 7.3052 15.264 7.46418L7.46398 15.2642C7.37555 15.3466 7.30463 15.4459 7.25544 15.5563C7.20625 15.6667 7.1798 15.7859 7.17767 15.9067C7.17553 16.0276 7.19776 16.1476 7.24303 16.2597C7.28829 16.3718 7.35567 16.4736 7.44113 16.559C7.52659 16.6445 7.62839 16.7119 7.74046 16.7571C7.85252 16.8024 7.97256 16.8246 8.0934 16.8225C8.21425 16.8204 8.33342 16.7939 8.44382 16.7447C8.55422 16.6955 8.65358 16.6246 8.73598 16.5362L16.536 8.73618ZM10.8 9.60018C10.8 9.91844 10.6735 10.2237 10.4485 10.4487C10.2235 10.6737 9.91824 10.8002 9.59998 10.8002C9.28172 10.8002 8.97649 10.6737 8.75145 10.4487C8.5264 10.2237 8.39998 9.91844 8.39998 9.60018C8.39998 9.28192 8.5264 8.97669 8.75145 8.75165C8.97649 8.5266 9.28172 8.40018 9.59998 8.40018C9.91824 8.40018 10.2235 8.5266 10.4485 8.75165C10.6735 8.97669 10.8 9.28192 10.8 9.60018ZM14.4 15.6002C14.7182 15.6002 15.0235 15.4737 15.2485 15.2487C15.4735 15.0237 15.6 14.7184 15.6 14.4002C15.6 14.0819 15.4735 13.7767 15.2485 13.5516C15.0235 13.3266 14.7182 13.2002 14.4 13.2002C14.0817 13.2002 13.7765 13.3266 13.5514 13.5516C13.3264 13.7767 13.2 14.0819 13.2 14.4002C13.2 14.7184 13.3264 15.0237 13.5514 15.2487C13.7765 15.4737 14.0817 15.6002 14.4 15.6002V15.6002Z" fill="#B3B3B3"/>
+							</svg>
+							
+							</div>
 							<div class="info__content">${percentFrom(person.points, person.maxPoints)}%</div>
 						</span>
 						<div class="options">
@@ -1262,7 +1271,7 @@ testManager.window.addEventListener("click", async e => {
 				</div>
 					<div class="box-content box-content--view">
 					<div class="option">
-						<h2 class="box-content__header box-content__header--h2">People, that solved test</h2>
+						<h2 class="box-content__header box-content__header--h2">People who solved test</h2>
 						<div class="table">
 							${persons}
 						</div>

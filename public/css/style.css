@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 @keyframes closing {
   0% {
@@ -16,31 +16,31 @@
   }
 }
 ::selection {
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
   color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: hsl(200deg, 100%, 50%);
-  border: 2px solid rgb(243, 243, 243);
+  background: hsl(210deg, 100%, 50%);
+  border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   border-radius: 1rem;
-  background: #33bbff;
+  background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 1rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: white;
 }
 
 /* The track NOT covered by the handle. */
@@ -64,13 +64,14 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
-  color: rgb(175, 175, 175);
+  color: rgb(0, 0, 0);
+}
+.page--main {
   overflow: hidden;
 }
 
 :root {
-  font: 62.5% "Open Sans", "Nanum Gothic", serif;
+  font: 62.5% "Inter", "Nanum Gothic", serif;
 }
 
 *,
@@ -125,7 +126,7 @@
 .bg-loader .loader {
   width: 50px;
   height: 50px;
-  border-left-color: hsl(200deg, 100%, 50%);
+  border-left-color: hsl(210deg, 100%, 50%);
 }
 .bg-loader--finished {
   opacity: 0;
@@ -141,14 +142,13 @@
   justify-content: nowrap;
 }
 .box--main {
+  -webkit-user-drag: none;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  background: rgb(245, 245, 255);
+  background: #ffffff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
   gap: 1rem;
   padding: 1rem;
   border-radius: 2rem;
@@ -183,19 +183,20 @@
   width: 250px;
   height: 250px;
   font-size: 2.8rem;
-  background: hsl(200deg, 100%, 50%);
+  background: white;
   font-family: inherit;
   border-radius: 2rem;
-  color: white;
+  color: hsl(210deg, 100%, 50%);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
   transition: all 0.2s 0s ease-out;
 }
 .box__button:hover {
-  background: #24b6ff;
-}
-.box__button:active {
-  background: rgb(225, 225, 225);
+  background: hsl(210deg, 100%, 50%);
+  color: white;
 }
 .box__tile {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
   opacity: 0;
   margin: 1rem;
 }

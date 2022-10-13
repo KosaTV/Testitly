@@ -37,8 +37,6 @@ class Calendar {
 		this.inputCnt.style.width = getComputedStyle(this.input).getPropertyValue("width");
 		this.inputCnt.style.height = getComputedStyle(this.input).getPropertyValue("height");
 		this.input.parentElement.insertBefore(this.inputCnt, this.input);
-		this.icoButton.style.borderTopRightRadius = ".2rem";
-		this.icoButton.style.borderBottomRightRadius = ".2rem";
 		this.inputCnt.appendChild(this.input);
 		this.inputCnt.appendChild(this.icoButton);
 

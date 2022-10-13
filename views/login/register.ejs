@@ -15,44 +15,50 @@
 	<body class="page">
 		<main class="main main--center">
 			<div class="context">
-				<div class="form-cnt">
-					<h1 class="form-cnt__header">Register</h1>
-					<form action="/register" method="POST" class="form form--register">
-						<fieldset class="form__group form__group--personal-data">
-							<legend class="form__chapter">Personal data</legend>
+				<div class="info">
+					<h1 class="form-cnt__header">Sign up</h1>
+					<form action="/Sign up" method="POST" class="form form--Sign up">
+						<div class="form__double-row">
 							<div class="input-cnt">
-								<input required type="text" class="form__input form__input--text" name="name" />
+								<input required type="text" class="form__input form__input--text" name="name" placeholder=" " />
 								<span class="info__placeholder">Name</span>
 							</div>
 							<div class="input-cnt">
-								<input required type="text" class="form__input form__input--text" name="surname" />
+								<input required type="text" class="form__input form__input--text" name="surname" placeholder=" " />
 								<span class="info__placeholder">Surname</span>
 							</div>
-						</fieldset>
-						<fieldset class="form__group form__group--account-data">
-							<legend class="form__chapter">Account data</legend>
+						</div>
+						<div class="form__double-row">
 							<div class="input-cnt">
-								<input required minlength="3" maxlength="35" type="text" class="form__input form__input--text" name="username" />
+								<input required minlength="3" maxlength="35" type="text" class="form__input form__input--text" name="username" placeholder=" " />
 								<span class="info__placeholder">User name</span>
 							</div>
 							<div class="input-cnt">
-								<input required pattern=".{1,}@.{1,}\..{1,}" type="email" class="form__input form__input--text" name="email" /><span class="info__placeholder">E-mail</span>
+								<input required pattern=".{1,}@.{1,}\..{1,}" type="email" class="form__input form__input--text" name="email" placeholder=" " /><span class="info__placeholder"
+									>E-mail</span
+								>
 							</div>
-							<div class="input-cnt">
-								<input required pattern="[A-ZĄĆĘŁŃÓŚŹŻ]{1}.{7,}" type="password" class="form__input form__input--text" name="password" />
-								<span class="info__placeholder">Password</span>
-								<span class="info__side-icon"><i class="fas fa-info"></i></span>
-								<span class="info__description">Your password should be <strong>Capitalized</strong> and include at least <strong>7 letters</strong>.</span>
-							</div>
-							<div class="input-cnt input-cnt--hidden">
-								<label class="form__label"
-									>Don't fill this field<input placeholder="If you're not Robot type here nothing" type="hidden" class="form__input" name="hidden"
-								/></label>
-							</div>
-						</fieldset>
-						<button class="form__button form__button--submit" type="submit">Register</button>
+						</div>
+						<div class="input-cnt">
+							<input required pattern="[A-ZĄĆĘŁŃÓŚŹŻ]{1}.{7,}" type="password" class="form__input form__input--text" name="password" placeholder=" " />
+							<span class="info__placeholder">Password</span>
+							<span class="info__side-icon"
+								><svg width="5" height="19" viewBox="0 0 5 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M0.9375 2.46875C0.9375 2.88315 1.10212 3.28058 1.39515 3.5736C1.68817 3.86663 2.0856 4.03125 2.5 4.03125C2.9144 4.03125 3.31183 3.86663 3.60485 3.5736C3.89788 3.28058 4.0625 2.88315 4.0625 2.46875C4.0625 2.05435 3.89788 1.65692 3.60485 1.3639C3.31183 1.07087 2.9144 0.90625 2.5 0.90625C2.0856 0.90625 1.68817 1.07087 1.39515 1.3639C1.10212 1.65692 0.9375 2.05435 0.9375 2.46875V2.46875ZM3.28125 6.57031H1.71875C1.61133 6.57031 1.52344 6.6582 1.52344 6.76562V18.0938C1.52344 18.2012 1.61133 18.2891 1.71875 18.2891H3.28125C3.38867 18.2891 3.47656 18.2012 3.47656 18.0938V6.76562C3.47656 6.6582 3.38867 6.57031 3.28125 6.57031Z"
+										fill="white"
+									/>
+								</svg>
+							</span>
+							<span class="info__description">Your password should be <strong>Capitalized</strong> and include at least <strong>7 letters</strong>.</span>
+						</div>
+						<div class="input-cnt input-cnt--hidden">
+							<label class="form__label"
+								>Don't fill this field<input placeholder="If you're not Robot type here nothing" type="hidden" class="form__input" name="hidden"
+							/></label>
+						</div>
+						<button class="form__button form__button--submit" type="submit">Sign up</button>
 						<div class="options">
-							Already have an account?
 							<a href="/login" class="mini-link">Log in</a>
 						</div>
 					</form>

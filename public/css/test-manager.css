@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 @keyframes closing {
   0% {
@@ -16,31 +16,31 @@
   }
 }
 ::selection {
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
   color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: hsl(200deg, 100%, 50%);
-  border: 2px solid rgb(243, 243, 243);
+  background: hsl(210deg, 100%, 50%);
+  border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   border-radius: 1rem;
-  background: #33bbff;
+  background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 1rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: white;
 }
 
 /* The track NOT covered by the handle. */
@@ -64,8 +64,9 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
-  color: rgb(175, 175, 175);
+  color: rgb(0, 0, 0);
+}
+.page--main {
   overflow: hidden;
 }
 
@@ -76,12 +77,13 @@
 .test-manager .window__tests .window__test {
   display: flex;
   user-select: none;
-  padding: 0.5rem 1.5rem;
+  padding: 2.5rem 1.5rem;
   font-size: 3rem;
-  background: rgb(245, 245, 255);
-  border-bottom: 1px solid rgb(241, 241, 241);
   align-items: center;
+  margin: 1rem;
+  border-radius: 1rem;
   justify-content: space-between;
+  background: rgb(250, 250, 250);
 }
 @media only screen and (max-width: 479px) {
   .test-manager .window__tests .window__test {
@@ -94,17 +96,18 @@
   align-items: center;
   justify-content: center;
   outline: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  border-radius: 1rem;
+  width: 36px;
+  height: 36px;
   margin: 0.1rem;
   font-size: 1.6rem;
   border: none;
   color: rgb(150, 150, 150);
-  background: none;
+  background: rgb(241, 241, 241);
+  cursor: pointer;
 }
 .test-manager .window__tests .window__test .window__item-button:active {
-  background: rgb(220, 220, 220);
+  background: rgb(225, 225, 225);
 }
 .test-manager .window__tests .window__test:active {
   background: rgba(0, 0, 0, 0.0075);
@@ -116,6 +119,7 @@
   display: block;
   padding: 1;
   font-size: 2rem;
+  color: rgb(200, 200, 200);
 }
 @media only screen and (max-width: 479px) {
   .test-manager .window__tests .window__test .test-manager__date {
@@ -127,8 +131,16 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  gap: 1rem 0;
+  gap: 0.5rem;
+  margin: 0.5rem;
   justify-content: flex-end;
+}
+@media only screen and (max-width: 579px) {
+  .test-manager .window__tests .window__test .test-manager__container-btn {
+    justify-content: center;
+    max-width: 100px;
+    flex-wrap: wrap;
+  }
 }
 .test-manager .window__tests .window__test .test-manager__container-btn .window__item-button {
   font-size: 2rem;
@@ -143,24 +155,29 @@
   cursor: pointer;
   transition: background 0.2s 0s linear, border 0.2s 0s linear;
 }
+@media only screen and (max-width: 579px) {
+  .test-manager .window__tests .window__test .test-manager__public-btn {
+    margin: 1rem;
+  }
+}
 .test-manager .window__tests .window__test .test-manager__public-btn::before {
   content: "";
   display: block;
-  width: 60%;
-  height: 137%;
+  width: 25px;
+  height: 25px;
   background: white;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   border: 2px solid rgb(225, 225, 225);
   transition: all 0.2s 0s ease-out;
 }
 .test-manager .window__tests .window__test .test-manager__public-btn--active {
-  background: hsl(200deg, 100%, 50%);
-  border-color: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
+  border-color: hsl(210deg, 100%, 50%);
 }
 .test-manager .window__tests .window__test .test-manager__public-btn--active::before {
   background: white;
-  border-color: hsl(200deg, 100%, 50%);
-  transform: translateX(67%);
+  border-color: hsl(210deg, 100%, 50%);
+  transform: translateX(85%);
 }
 
 .creating-test .window__content {
@@ -284,12 +301,12 @@
   overflow: auto;
 }
 .reader__box {
-  margin: 1rem;
-  padding: 1rem;
-  padding-right: 6rem;
-  background: rgba(0, 170, 255, 0.015);
+  margin: 4rem 2rem;
+  padding: 3rem;
+  background: white;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25);
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
 }
 .reader__box .reader__header {
   font-size: 3rem;
@@ -356,7 +373,7 @@
   right: 0;
   font-size: 2.1rem;
   margin: 0.75rem;
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
   padding: 0.75rem;
   border: 4px solid;
   border-top: none;
@@ -375,10 +392,10 @@
   resize: none;
   width: 100%;
   height: calc(100% - 60px);
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
   border: 1px solid rgb(241, 241, 241);
   word-wrap: wrap;
-  font-family: "Open Sans";
+  font-family: "Inter";
 }
 .uploader .window__content .uploader__input::placeholder {
   color: rgb(225, 225, 225);
@@ -408,9 +425,9 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  justify-content: space-around;
 }
 .test-settings .explorer__content {
-  flex: 1;
   overflow: auto;
 }
 .test-settings .explorer__tab {
@@ -419,8 +436,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 3rem;
+  width: 128px;
   font-size: 2rem;
   padding: 2rem;
+  margin: 2rem;
   box-shadow: inset 0 0 1px transparent;
   flex: 1 1 0;
   align-self: stretch;
@@ -436,11 +456,11 @@
 }
 .test-settings .explorer__tab:hover {
   color: white;
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
 }
 .test-settings .explorer__tab--active {
   color: white;
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
 }
 .test-settings .explorer__tab-icon {
   margin: 1rem;
@@ -503,7 +523,7 @@
 .solution-settings .box-content__link,
 .test-settings .box-content__link {
   font-size: 1.5rem;
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
   text-decoration: none;
 }
 .solution-settings .box-content__label,
@@ -528,7 +548,7 @@
   position: relative;
   padding: 2rem;
   border-radius: 0.5rem;
-  border: 1px solid hsl(200deg, 100%, 50%);
+  border: 1px solid hsl(210deg, 100%, 50%);
   user-select: none;
   cursor: pointer;
 }
@@ -538,11 +558,11 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
 }
 .solution-settings .box-content__small-text--info:hover,
 .test-settings .box-content__small-text--info:hover {
-  background: rgba(0, 170, 255, 0.1);
+  background: rgba(0, 128, 255, 0.1);
 }
 .solution-settings .box-content .strong,
 .test-settings .box-content .strong {
@@ -551,7 +571,7 @@
 }
 .solution-settings .box-content .strong--info,
 .test-settings .box-content .strong--info {
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
 }
 .solution-settings .box-content .window__input,
 .test-settings .box-content .window__input {
@@ -578,9 +598,13 @@
 .test-settings .table {
   width: 100%;
   height: 500px;
-  border: 1px solid rgb(200, 200, 200);
+  background: rgb(245, 245, 255);
   overflow-y: auto;
   overflow-x: hidden;
+  padding: 1rem;
+  margin: 2rem 1rem;
+  border-radius: 2rem;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
 }
 .solution-settings .table__item,
 .test-settings .table__item {
@@ -588,11 +612,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 1.25rem;
   background: white;
   color: rgb(100, 100, 100);
   font-size: 2rem;
   user-select: none;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
 }
 .solution-settings .table__item:not(.solution-settings .table__item:first-child,
 .test-settings .table__item:first-child),
@@ -604,14 +631,9 @@
 .test-settings .table__item:active {
   background: none;
 }
-.solution-settings .table__item:hover,
-.test-settings .table__item:hover {
-  z-index: 1;
-  box-shadow: 0 4px 4px -2px rgb(190, 190, 190), 0 -4px 4px -2px rgb(190, 190, 190);
-}
 .solution-settings .table .profile__img,
 .test-settings .table .profile__img {
-  color: hsl(200deg, 100%, 50%);
+  color: rgb(200, 200, 200);
 }
 .solution-settings .table .info__item,
 .test-settings .table .info__item {
@@ -647,15 +669,8 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  color: hsl(210deg, 100%, 50%);
   cursor: pointer;
-}
-.solution-settings .table .info .options__item:hover,
-.test-settings .table .info .options__item:hover {
-  background: rgb(200, 200, 200);
-}
-.solution-settings .table .info .options__item:active,
-.test-settings .table .info .options__item:active {
-  background: rgb(175, 175, 175);
 }
 
 .test-settings .box {

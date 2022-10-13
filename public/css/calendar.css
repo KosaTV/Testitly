@@ -9,24 +9,22 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	border-radius: 0;
-	border-top-left-radius: 0.75rem;
-	border-bottom-left-radius: 0.75rem;
+
 	font-size: 1.2rem;
-	color: rgb(100, 100, 100);
+	color: white;
 }
 
 .calendar-ico {
 	position: absolute;
 	top: 0;
-	left: 100%;
-	width: 40px;
-	height: 100%;
+	right: 0;
+	margin: 0.5rem;
+	width: 30px;
+	height: 30px;
 	border: none;
-	background: #00aaff;
-	color: rgb(240, 240, 240);
-	border-top-right-radius: 0.75rem;
-	border-bottom-right-radius: 0.75rem;
+	border-radius: 0.5rem;
+	background: hsl(210, 100%, 50%);
+	color: white;
 	opacity: 0.9;
 	font-size: 1.8rem;
 	cursor: pointer;
@@ -41,8 +39,8 @@
 }
 
 .calendar-ico-focus {
-	background: #00aaff;
-	color: rgb(230, 230, 230);
+	background: hsl(210, 100%, 50%);
+	color: white;
 }
 
 .calendar-container {
@@ -56,10 +54,10 @@
 	transition: all 0.2s 0s ease;
 	min-height: 300px;
 	width: 300px;
-	border-radius: 8px;
+	border-radius: 1.6rem;
 	overflow: hidden;
 	background: rgb(242.5, 242.5, 255);
-	box-shadow: 3px 3px 5px 1.1px rgb(40, 40, 40);
+	box-shadow: 3px 2px 12px 0 rgb(0, 0, 0, 0.25);
 	color: rgb(30, 30, 30);
 }
 
@@ -76,8 +74,8 @@
 	align-items: center;
 	width: 100%;
 	height: 40px;
-	background: #00aaff;
-	color: rgb(240, 240, 240);
+	background: hsl(210, 100%, 50%);
+	color: white;
 }
 
 .calendar-header h2 {
@@ -94,7 +92,7 @@
 	border: none;
 	background: transparent;
 	cursor: pointer;
-	color: rgb(230, 210, 255);
+	color: white;
 }
 
 .calendar-content {
@@ -131,12 +129,13 @@
 	border-radius: 50%;
 }
 .calendar-table .day:hover {
-	border: 1px solid #00aaff;
+	border: 2px solid hsl(210, 100%, 50%);
 	cursor: pointer;
 }
 
 .calendar-table .current-day {
-	background: #00aaff;
+	background: hsl(210, 100%, 50%);
+	color: white;
 }
 
 .calendar-table .empty {
@@ -151,8 +150,8 @@
 	align-items: center;
 	justify-content: center;
 	height: 40px;
-	background: #00aaff;
-	color: rgb(240, 240, 240);
+	background: hsl(210, 100%, 50%);
+	color: white;
 	font-size: 3rem;
 	cursor: pointer;
 }
@@ -169,8 +168,8 @@
 	border-radius: 8px;
 	overflow: hidden;
 	background: rgb(242.5, 242.5, 255);
-	box-shadow: 3px 3px 5px 1.1px rgb(40, 40, 40);
-	color: rgb(30, 30, 30);
+	box-shadow: 3px 2px 12px 0 rgb(0, 0, 0, 0.25);
+	color: hsl(210, 100%, 50%);
 }
 
 .calendar-mini-down-element,
@@ -181,8 +180,8 @@
 	align-items: center;
 	justify-content: center;
 	height: 25px;
-	background: #00aaff;
-	color: rgb(240, 240, 240);
+	background: hsl(210, 100%, 50%);
+	color: white;
 	cursor: pointer;
 }
 
@@ -212,7 +211,7 @@
 	border: none;
 	background: transparent;
 	cursor: pointer;
-	color: rgb(230, 210, 255);
+	color: white;
 }
 
 .mini-content {

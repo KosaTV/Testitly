@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 :root {
-  font: 62.5% "Open Sans", "Nanum Gothic", serif;
+  font: 62.5% "Inter", "Nanum Gothic", serif;
 }
 
 *,
@@ -28,31 +28,31 @@
   }
 }
 ::selection {
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
   color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: hsl(200deg, 100%, 50%);
-  border: 2px solid rgb(243, 243, 243);
+  background: hsl(210deg, 100%, 50%);
+  border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   border-radius: 1rem;
-  background: #33bbff;
+  background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 1rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: white;
 }
 
 /* The track NOT covered by the handle. */
@@ -76,14 +76,14 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: radial-gradient(#00f2fe 30%, #4facfe 100%);
-  color: rgb(175, 175, 175);
+  color: rgb(0, 0, 0);
+}
+.page--main {
   overflow: hidden;
 }
 
 @media only screen and (max-width: 579px) {
   .page {
-    background: white;
     align-items: flex-start;
   }
 }
@@ -92,12 +92,8 @@
   text-align: center;
   font-size: 6rem;
   margin: 1rem 0;
-  color: rgb(245, 245, 255);
-}
-@media only screen and (max-width: 579px) {
-  .context .form-cnt__header {
-    color: hsl(200deg, 100%, 50%);
-  }
+  font-weight: 400;
+  color: hsl(210deg, 100%, 50%);
 }
 .context .send {
   display: flex;
@@ -110,16 +106,57 @@
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  padding: 5rem;
-  border-radius: 0.5rem;
+  padding: 12.5rem 15rem;
   background: white;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+@media only screen and (min-width: 480px) and (max-width: 1023px) {
+  .context .form {
+    box-shadow: none;
+  }
 }
 @media only screen and (max-width: 579px) {
   .context .form {
     width: 100%;
     padding: 1rem;
     background: none;
+    box-shadow: none;
+  }
+}
+.context .form__double-row {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+.context .form__double-row:first-child {
+  padding-bottom: 6.4rem;
+}
+@media only screen and (min-width: 1024px) {
+  .context .form {
+    align-items: stretch;
+  }
+  .context .form__double-row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 3.2rem;
+  }
+  .context .form__double-row:first-child {
+    padding-bottom: 0;
+  }
+  .context .form__double-row .input-cnt {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6.4rem;
+  }
+  .context .form .form__input--text {
+    width: 100%;
   }
 }
 .context .form__group {
@@ -130,7 +167,7 @@
   margin: 1rem 0;
   border: none;
   font-size: 1.5rem;
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
 }
 .context .form .info .input-cnt {
   position: relative;
@@ -154,7 +191,7 @@
   padding: 1rem;
   color: white;
   border: none;
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
   font-size: 2.5rem;
   cursor: pointer;
   transition: background 0.2s 0s ease;
@@ -199,14 +236,14 @@
   color: rgb(175, 175, 175);
 }
 .context .form .info__input:focus {
-  background: rgba(0, 170, 255, 0.04);
+  background: rgba(0, 128, 255, 0.04);
 }
 .context .form .info__input:focus + .info__placeholder {
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
   transform: translate(-4px, -35px);
 }
 .context .form .info__input:valid + .info__placeholder {
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
   transform: translate(-10px, -35px);
 }
 .context .form .info__input:focus ~ .info__border {
@@ -216,7 +253,7 @@
   width: 100%;
   height: 2px;
   transform-origin: left;
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
   transform: scaleX(1);
   transition: transform 0.5s 0s ease;
 }
@@ -226,21 +263,28 @@
   top: 110%;
   left: 0;
   opacity: 0;
-  padding: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem 0;
   background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 0.75rem;
+  box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.25);
   transition: opacity 0.5s 0.2s ease;
 }
 .context .form .info__side-icon {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 50%;
   right: 0;
+  width: 32px;
+  height: 32px;
   transform: translateY(-50%);
   padding: 0.5rem 1rem;
-  background: hsl(200deg, 100%, 50%);
+  background: hsl(210deg, 100%, 50%);
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   margin: 0 1rem;
   cursor: help;
 }
@@ -250,51 +294,75 @@
 .context .form .input-cnt {
   position: relative;
   display: inline-block;
-  margin: 1rem 0;
   color: rgb(150, 150, 150);
+}
+.context .form .input-cnt:not(.context .form .input-cnt:first-child) {
+  margin-top: 6.4rem;
 }
 .context .form .input-cnt--hidden {
   display: none;
 }
 .context .form__input--text {
   outline: none;
+  width: 300px;
+  height: 50px;
+  border: none;
   padding: 1.3rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgb(190, 190, 190);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  border: 3px solid transparent;
+  border-radius: 10px;
   font-size: 2rem;
 }
 .context .form__input--text::placeholder {
   color: rgb(175, 175, 175);
 }
 .context .form__input--text:focus {
-  border: 1px solid hsl(200deg, 100%, 50%);
+  border-color: hsl(210deg, 100%, 50%);
 }
 .context .form__input--text:focus + .info__placeholder {
-  color: hsl(200deg, 100%, 50%);
-  transform: translate(-4px, -35px);
+  color: hsl(210deg, 100%, 50%);
+  transform: translate(-15px, -55px);
 }
 .context .form__input--text:focus ~ .info__side-icon {
   opacity: 1;
 }
 .context .form__input--text:valid + .info__placeholder {
-  color: hsl(200deg, 100%, 50%);
-  transform: translate(-10px, -35px);
+  color: hsl(210deg, 100%, 50%);
+  transform: translate(-15px, -55px);
+}
+.context .form__input--text:valid:not(.context .form__input--text:focus) + .info__placeholder {
+  color: black;
+}
+.context .form__input--text:invalid:not(.context .form__input--text:focus, .context .form__input--text:placeholder-shown) + .info__placeholder {
+  color: hsl(0deg, 100%, 50%);
+  transform: translate(-15px, -55px);
 }
 .context .form__button--submit {
   outline: none;
   padding: 1rem 3rem;
+  margin-top: 4.8rem;
   color: white;
   border: none;
-  background: hsl(200deg, 100%, 50%);
-  width: 20%;
-  border-radius: 0.5rem;
-  min-width: 200px;
+  background: hsl(210deg, 100%, 50%);
+  min-width: 300px;
+  height: 50px;
   font-size: 2.5rem;
+  font-family: "Inter";
+  font-weight: 400;
   cursor: pointer;
   transition: background 0.2s 0s ease;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 .context .form__button--submit:active {
   background: rgb(200, 200, 200);
+}
+.context .info {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
 }
 
 .error {
@@ -314,8 +382,14 @@
 }
 
 .mini-link {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  height: 64px;
   text-decoration: none;
-  color: hsl(200deg, 100%, 50%);
+  color: hsl(210deg, 100%, 50%);
 }
 
 /*# sourceMappingURL=login.css.map */
