@@ -38,7 +38,7 @@
 		position: sticky;
 		bottom: 0;
 		left: 0;
-		margin-top: 1rem;
+		padding: 1rem 0;
 	}
 
 	&__top-bar {
@@ -104,7 +104,7 @@
 		@include transition-ease;
 
 		&--save {
-			width: 300px;
+			width: 200px;
 		}
 
 		&:hover {

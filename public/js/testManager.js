@@ -541,9 +541,18 @@ testManager.window.addEventListener("click", async e => {
 		creatingTestHeader.appendChild(creatingTestTitle);
 		const creatingTestAddSol = document.createElement("button");
 		creatingTestAddSol.classList.add("window__button", "window__button--add-sol");
-		creatingTestAddSol.innerHTML = "Add solution";
+		creatingTestAddSol.innerHTML = `
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M21 10.5V12H12V21H10.5V12H1.5V10.5H10.5V1.5H12V10.5H21Z" fill="white"/>
+		</svg>	
+		`;
 		const creatingTestSaveTest = document.createElement("button");
-		creatingTestSaveTest.innerHTML = "Save";
+		creatingTestSaveTest.innerHTML = `
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M5 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0392 21 19.5305 21 19V8.00002C21.0008 7.86841 20.9755 7.73795 20.9258 7.61611C20.876 7.49427 20.8027 7.38346 20.71 7.29002L16.71 3.29002C16.6166 3.19734 16.5057 3.12401 16.3839 3.07425C16.2621 3.02448 16.1316 2.99926 16 3.00002H5C4.46957 3.00002 3.96086 3.21073 3.58579 3.5858C3.21071 3.96088 3 4.46958 3 5.00002V19C3 19.5305 3.21071 20.0392 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21ZM15 19H9V14H15V19ZM13 7.00002H11V5.00002H13V7.00002ZM5 5.00002H7V9.00002H15V5.00002H15.59L19 8.41002V19H17V14C17 13.4696 16.7893 12.9609 16.4142 12.5858C16.0391 12.2107 15.5304 12 15 12H9C8.46957 12 7.96086 12.2107 7.58579 12.5858C7.21071 12.9609 7 13.4696 7 14V19H5V5.00002Z" fill="white"/>
+		</svg>
+
+		`;
 		creatingTestSaveTest.classList.add("window__button", "window__button--save");
 		creatingTestSaveTest.dataset.status = status;
 		creatingTestHeader.appendChild(creatingTestAddSol);
@@ -886,9 +895,11 @@ testManager.window.addEventListener("click", async e => {
 					/*HTML*/
 					`
 				<div class="option">
-					<h2 class="box-content__header box-content__header--h2">Amount of points for correct answear</h2>
+					<h2 class="box-content__header box-content__header--h2">Points</h2>
 					<label class="box-content__label">
-						Points for each correct answear:
+						<div>
+							Points for each correct answear:
+						</div>
 						<input class="window__input" name="points" type="number" value="${points.value}" min="0">
 					</label>
 				</div>
@@ -898,13 +909,12 @@ testManager.window.addEventListener("click", async e => {
 					/*HTML*/
 					`
 					<div class="option">
-						<h2 class="box-content__header box-content__header--h2">Amount of negative points for wrong answear</h2>
+						<h2 class="box-content__header box-content__header--h2">Negative Points</h2>
 							<label class="box-content__label">
-							Negative points for each wrong answear:
+							<div>
+								Negative points for each wrong answear:
+							</div>
 							<input class="window__input" type="number" name="negativePoints" value="${negativePoints}" min="0">
-							<p class="box-content__small-text box-content__small-text--info">
-								<i class="fas fa-info-circle icon"></i> This scores are negative, for example: If you enter "1", when user will select wrong answear, he's gonna lose<strong class="strong"> 1 point</strong>.
-							</p>
 						</label>
 					</div>
 				`;
@@ -913,13 +923,15 @@ testManager.window.addEventListener("click", async e => {
 					/*HTML*/
 					`
 					<div class="option">
-						<h2 class="box-content__header box-content__header--h2">Bonus points, when user selected all correct answears</h2>
+						<h2 class="box-content__header box-content__header--h2">Bonus Points</h2>
 						<label class="box-content__label">
 							Bonus amount of points
 							<input class="window__input" type="number" name="bonusPoints" value="${bonusPoints}" min="0">
+							<div>
 							<p class="box-content__small-text box-content__small-text--info">
-								<i class="fas fa-info-circle icon"></i>These points are not in range of maximum points of test. As result <strong class="strong">user can get more points than maximum points for that test</strong>.
+								<i class="fas fa-info-circle icon"></i>When user will select all answears correctly, these points is gonna be added additionaly. These points are not in range of maximum points of test. As result <strong class="strong">user can get more points than maximum points for that test</strong>.
 							</p>
+							</div>
 						</label>
 					</div>
 				`;
@@ -1191,7 +1203,7 @@ testManager.window.addEventListener("click", async e => {
 									<input type="text" class="window__input window__input--test-start-time window__input--time" name="testStartTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours()
 									)}:${addZero(new Date().getMinutes())}" >
-									<input type="text" class="window__input window__input--test-start-date window__input--date" name="testStartDate" placeholder="month/day/year" value="${addZero(
+									<input disabled type="text" class="window__input window__input--test-start-date window__input--date" name="testStartDate" placeholder="mm/dd/yyyy" value="${addZero(
 										new Date().getMonth() + 1
 									)}/${addZero(new Date().getDate())}/${addZero(new Date().getFullYear())}">
 								</div>
@@ -1202,7 +1214,7 @@ testManager.window.addEventListener("click", async e => {
 									<input type="text" class="window__input window__input--test-end-time window__input--time" name="testEndTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours() + 1
 									)}:${addZero(new Date().getMinutes())}">
-									<input type="text" class="window__input window__input--test-end--date window__input--date" name="testEndDate" placeholder="month/day/year" value="${addZero(
+									<input disabled type="text" class="window__input window__input--test-end--date window__input--date" name="testEndDate" placeholder="mm/dd/yyyy" value="${addZero(
 										new Date().getMonth() + 1
 									)}/${addZero(new Date().getDate())}/${addZero(new Date().getFullYear())}">
 								</div>

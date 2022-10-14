@@ -140,13 +140,18 @@ class Window {
 			if (e.type === "mousemove") {
 				this.top = e.clientY - this.posY;
 				this.left = e.clientX - this.posX;
-			} else {
-				this.top = e.targetTouches[0].clientY - this.posY;
-				this.left = e.targetTouches[0].clientX - this.posX;
-			}
 
-			this.window.style.top = `${this.top}px`;
-			this.window.style.left = `${this.left}px`;
+				this.window.style.top = `${this.top}px`;
+				this.window.style.left = `${this.left}px`;
+
+				const {top, left, bottom, right, width, height} = this.window.getBoundingClientRect();
+				const {top: desktopTop, left: desktopLeft, bottom: desktopBottom, right: desktopRight} = document.body.getBoundingClientRect();
+
+				if (top < desktopTop) this.window.style.top = `0`;
+				if (left < desktopLeft) this.window.style.left = `0`;
+				if (right > desktopRight) this.window.style.left = `${desktopRight - width}px`;
+				if (bottom > desktopBottom) this.window.style.top = `${desktopBottom - height}px`;
+			}
 		}
 	}
 

@@ -146,14 +146,10 @@
 
 			.window__sol-box {
 				position: relative;
-				margin-bottom: 1rem;
+				margin: 2rem;
 				padding: 2rem 1rem;
-				padding-bottom: 5rem;
+				padding-bottom: 8rem;
 				background: white;
-
-				&:last-child {
-					margin-bottom: 0;
-				}
 
 				.window__label {
 					display: inline-block;
@@ -192,6 +188,13 @@
 
 					.options {
 						display: none;
+					}
+
+					@include media(largeMobile) {
+						right: initial;
+						left: 50%;
+						width: 200px;
+						transform: translateX(-50%);
 					}
 				}
 
@@ -266,7 +269,7 @@
 	}
 
 	&__box {
-		margin: 4rem 2rem;
+		margin: 4rem 3rem;
 		padding: 3rem;
 		background: white;
 		box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25);
@@ -353,6 +356,10 @@
 			border-radius: 50%;
 		}
 	}
+
+	&__answears {
+		margin: 2rem 0;
+	}
 }
 
 .uploader {
@@ -367,7 +374,7 @@
 			outline: none;
 			resize: none;
 			width: 100%;
-			height: calc(100% - 60px);
+			height: calc(100% - 80px);
 			color: $secondary-color;
 			border: 1px solid map-get($white, "2");
 			word-wrap: wrap;
@@ -485,6 +492,12 @@
 			font-size: 2rem;
 			color: map-get($white, "6");
 		}
+
+		@include media(largeMobile) {
+			&--h1 {
+				font-size: 3rem;
+			}
+		}
 	}
 
 	.box-content {
@@ -499,6 +512,18 @@
 				font-size: 4rem;
 				color: map-get($white, "5");
 				margin: 2rem;
+			}
+
+			@include media(largeMobile) {
+				&--h2 {
+					font-size: 3rem;
+				}
+			}
+
+			@include media(largeMobile) {
+				&--h2 {
+					font-size: 2.5rem;
+				}
 			}
 		}
 
@@ -526,13 +551,14 @@
 			font-size: 1.5rem;
 			color: map-get($white, "10");
 			cursor: pointer;
-			@include flex-center(row);
+			@include flex-center(column);
 		}
 
 		&__small-text {
 			font-size: 1.2rem;
 			color: map-get($white, "8");
 			max-width: 370px;
+			margin: 1rem;
 
 			&--info {
 				position: relative;
@@ -577,7 +603,6 @@
 			&--date {
 				position: relative;
 				margin: 0;
-				z-index: -1;
 			}
 
 			&:disabled {
@@ -661,6 +686,10 @@
 			}
 		}
 	}
+}
+
+.save-section {
+	@include flex-center;
 }
 
 .test-settings {
