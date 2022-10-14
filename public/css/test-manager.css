@@ -197,6 +197,8 @@
   left: 0;
   padding: 1rem;
   gap: 1rem;
+  z-index: 2;
+  background: white;
 }
 .creating-test .window__content .window__input {
   margin: 1rem;
@@ -411,12 +413,16 @@
   flex-wrap: nowrap;
   align-items: stretch;
 }
+.test-settings .gray {
+  font-weight: 900;
+  color: rgb(190, 190, 190);
+}
 .test-settings .explorer {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: stretch;
   justify-content: stretch;
 }
@@ -425,7 +431,7 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .test-settings .explorer__content {
   overflow: auto;
@@ -435,32 +441,42 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  border-radius: 3rem;
-  width: 128px;
-  font-size: 2rem;
-  padding: 2rem;
-  margin: 2rem;
-  box-shadow: inset 0 0 1px transparent;
-  flex: 1 1 0;
+  border-radius: 1.5rem;
+  width: 160px;
+  font-size: 1.5rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  padding: 1rem 0;
+  margin: 1rem;
   align-self: stretch;
   cursor: pointer;
   user-select: none;
   border-top: none;
   margin-right: 1px;
+  stroke: black;
 }
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 579px) {
+  .test-settings .explorer__tab {
+    width: 64px;
+  }
+}
+@media only screen and (max-width: 579px) {
   .test-settings .explorer__tab-text {
     display: none;
   }
 }
+.test-settings .explorer__tab-ico {
+  margin: 0.5rem;
+}
 .test-settings .explorer__tab:hover {
   color: white;
+  stroke: white;
   background: hsl(210deg, 100%, 50%);
 }
 .test-settings .explorer__tab--active {
   color: white;
+  stroke: white;
   background: hsl(210deg, 100%, 50%);
+  box-shadow: 0px 1px 4px hsl(210deg, 100%, 50%);
 }
 .test-settings .explorer__tab-icon {
   margin: 1rem;
@@ -502,11 +518,13 @@
 }
 .solution-settings .box-content__header--h2,
 .test-settings .box-content__header--h2 {
-  font-size: 1.7rem;
-  color: rgb(100, 100, 100);
+  font-size: 4rem;
+  color: rgb(190, 190, 190);
+  margin: 2rem;
 }
 .solution-settings .box-content .option,
 .test-settings .box-content .option {
+  text-align: center;
   padding: 1rem;
 }
 .solution-settings .box-content .option .info,
@@ -528,14 +546,14 @@
 }
 .solution-settings .box-content__label,
 .test-settings .box-content__label {
-  font-size: 1.5rem;
-  color: rgb(100, 100, 100);
   margin: 1rem;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   align-items: center;
-  justify-content: nowrap;
+  justify-content: center;
 }
 .solution-settings .box-content__small-text,
 .test-settings .box-content__small-text {
@@ -641,6 +659,7 @@
   flex-flow: column wrap;
   align-items: center;
   justify-content: nowrap;
+  min-width: 64px;
   margin: 0 0.5rem;
 }
 .solution-settings .table .info__item .info__header,
@@ -677,13 +696,6 @@
   width: 100%;
   min-height: calc(100vh - 330px);
   padding: 2rem;
-}
-.test-settings .box-content__label {
-  margin: 0;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: flex-start;
 }
 .test-settings .box-content .window__input--radio {
   width: 20px;

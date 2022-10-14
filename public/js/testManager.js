@@ -1089,9 +1089,26 @@ testManager.window.addEventListener("click", async e => {
 		infoTab.classList.add("explorer__tab", "explorer__tab--info");
 		accessTab.classList.add("explorer__tab", "explorer__tab--access");
 
-		confTab.innerHTML = `<span class="explorer__tab-text">Configuration</span> <i class="explorer__tab-icon fas fa-tools"></i>`;
-		infoTab.innerHTML = `<span class="explorer__tab-text">Information</span> <i class="explorer__tab-icon fas fa-info"></i>`;
-		accessTab.innerHTML = `<span class="explorer__tab-text">Access</span> <i class="explorer__tab-icon fas fa-share-alt"></i>`;
+		confTab.innerHTML = `<span class="explorer__tab-text">Configuration</span>
+		<svg class="explorer__tab-ico" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M14.773 2.48485L13.993 2.30085L11.885 4.39685L10.691 3.18085L12.747 1.02385L12.567 0.231848C12.1326 0.0864985 11.6781 0.00957988 11.22 0.0038483C10.7203 -0.00383647 10.2243 0.0914766 9.76303 0.283848C9.31763 0.485459 8.91503 0.770607 8.57703 1.12385C8.20078 1.48026 7.9028 1.91106 7.70203 2.38885C7.31548 3.33973 7.31548 4.40396 7.70203 5.35485C5.61727 7.40584 3.55942 9.48402 1.52903 11.5888C1.31903 11.8638 1.21903 12.2068 1.24503 12.5518C1.26552 12.9229 1.43239 13.2707 1.70903 13.5188C1.83303 13.6538 1.98103 13.7658 2.14603 13.8468C2.31603 13.9218 2.49903 13.9648 2.68403 13.9738C3.00003 13.9678 3.30303 13.8478 3.53803 13.6368C5.08603 12.1798 8.05203 9.18685 9.73703 7.43285C10.194 7.62685 10.685 7.72685 11.181 7.72585C11.6803 7.72545 12.1744 7.62499 12.6342 7.43039C13.094 7.23579 13.5102 6.951 13.858 6.59285C14.5726 5.86411 14.9717 4.88345 14.969 3.86285C14.9806 3.39582 14.9143 2.93013 14.773 2.48485ZM2.93303 12.9278C2.89454 12.962 2.84814 12.9861 2.79803 12.9978C2.74873 13.0064 2.69833 13.0064 2.64903 12.9978C2.59734 12.99 2.5481 12.9705 2.50503 12.9408C2.4588 12.9138 2.41972 12.8761 2.39103 12.8308C2.25103 12.6878 2.12003 12.4158 2.25103 12.2628C3.62103 10.8058 6.44203 7.95785 8.20603 6.21685C8.30603 6.34885 8.41603 6.47485 8.53403 6.59285C8.65203 6.71585 8.77903 6.82985 8.91403 6.93385C7.20803 8.68385 4.42603 11.4978 2.93403 12.9278H2.93303ZM14.051 3.86285C14.053 4.62785 13.755 5.36285 13.219 5.91085C12.6842 6.43554 11.9648 6.72947 11.2155 6.72947C10.4663 6.72947 9.7469 6.43554 9.21203 5.91085C8.82001 5.50174 8.55222 4.98974 8.43981 4.43439C8.32739 3.87905 8.37498 3.3032 8.57703 2.77385C8.71152 2.41358 8.92013 2.08555 9.18937 1.81098C9.4586 1.5364 9.78247 1.32139 10.14 1.17985C10.4795 1.03776 10.844 0.964996 11.212 0.965848H11.466L9.64903 2.83885V3.53485L11.544 5.42085H12.204L14.051 3.60485V3.86285ZM3.24003 5.68785H4.77103L5.47603 6.40485L6.15403 5.73085L5.48903 5.05285V5.00985L5.54603 3.36085L5.32603 2.92385L2.46603 1.04185L1.87503 1.10785L1.04403 1.95685L0.978027 2.55585L2.81603 5.47385L3.24003 5.68885V5.68785ZM2.29503 2.05585L4.60903 3.57985L4.57003 4.70285H3.49403L2.00203 2.34085L2.29503 2.05585ZM9.40003 9.01585L10.074 8.34285L13.18 11.5278C13.4416 11.8028 13.5876 12.1678 13.5876 12.5473C13.5876 12.9269 13.4416 13.2919 13.18 13.5668C12.9833 13.7688 12.7303 13.9069 12.4541 13.963C12.1778 14.0192 11.891 13.9909 11.631 13.8818C11.4651 13.8083 11.3163 13.701 11.194 13.5668L8.05203 10.3638L8.73103 9.68585L11.863 12.8798C11.9051 12.9263 11.9575 12.9623 12.016 12.9848C12.1311 13.0316 12.2599 13.0316 12.375 12.9848C12.4335 12.9622 12.4859 12.9263 12.528 12.8798C12.5718 12.8365 12.6059 12.7843 12.628 12.7268C12.651 12.6682 12.6632 12.6058 12.664 12.5428C12.663 12.48 12.6512 12.4177 12.629 12.3588C12.6069 12.3014 12.5728 12.2492 12.529 12.2058L9.40003 9.01585Z" fill="none"/>
+		</svg>
+		`;
+		infoTab.innerHTML = `<span class="explorer__tab-text">Information</span>
+		<svg class="explorer__tab-ico" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M7.5 3.5C7.5 3.76522 7.60536 4.01957 7.79289 4.20711C7.98043 4.39464 8.23478 4.5 8.5 4.5C8.76522 4.5 9.01957 4.39464 9.20711 4.20711C9.39464 4.01957 9.5 3.76522 9.5 3.5C9.5 3.23478 9.39464 2.98043 9.20711 2.79289C9.01957 2.60536 8.76522 2.5 8.5 2.5C8.23478 2.5 7.98043 2.60536 7.79289 2.79289C7.60536 2.98043 7.5 3.23478 7.5 3.5ZM9 6.125H8C7.93125 6.125 7.875 6.18125 7.875 6.25V13.5C7.875 13.5688 7.93125 13.625 8 13.625H9C9.06875 13.625 9.125 13.5688 9.125 13.5V6.25C9.125 6.18125 9.06875 6.125 9 6.125Z" fill="none"/>
+		</svg> 
+		`;
+
+		accessTab.innerHTML = `<span class="explorer__tab-text">Access</span>
+		<svg class="explorer__tab-ico" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 5.5C2.67157 5.5 2 6.17157 2 7C2 7.82843 2.67157 8.5 3.5 8.5C4.32843 8.5 5 7.82843 5 7C5 6.17157 4.32843 5.5 3.5 5.5ZM0.5 7C0.5 5.34315 1.84315 4 3.5 4C5.15685 4 6.5 5.34315 6.5 7C6.5 8.65685 5.15685 10 3.5 10C1.84315 10 0.5 8.65685 0.5 7Z" fill="none"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 9.5C10.6716 9.5 10 10.1716 10 11C10 11.8284 10.6716 12.5 11.5 12.5C12.3284 12.5 13 11.8284 13 11C13 10.1716 12.3284 9.5 11.5 9.5ZM8.5 11C8.5 9.34315 9.84315 8 11.5 8C13.1569 8 14.5 9.34315 14.5 11C14.5 12.6569 13.1569 14 11.5 14C9.84315 14 8.5 12.6569 8.5 11Z" fill="none"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 1.5C10.6716 1.5 10 2.17157 10 3C10 3.82843 10.6716 4.5 11.5 4.5C12.3284 4.5 13 3.82843 13 3C13 2.17157 12.3284 1.5 11.5 1.5ZM8.5 3C8.5 1.34315 9.84315 0 11.5 0C13.1569 0 14.5 1.34315 14.5 3C14.5 4.65685 13.1569 6 11.5 6C9.84315 6 8.5 4.65685 8.5 3Z" fill="none"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M10.1708 3.66475C10.356 4.03524 10.2059 4.48574 9.83539 4.67098L5.83539 6.67098C5.46491 6.85623 5.0144 6.70606 4.82916 6.33557C4.64392 5.96509 4.79409 5.51459 5.16457 5.32934L9.16457 3.32934C9.53506 3.1441 9.98556 3.29427 10.1708 3.66475ZM4.82916 7.66475C5.0144 7.29427 5.46491 7.1441 5.83539 7.32934L9.83539 9.32934C10.2059 9.51459 10.356 9.96509 10.1708 10.3356C9.98556 10.7061 9.53506 10.8562 9.16457 10.671L5.16457 8.67098C4.79409 8.48574 4.64392 8.03524 4.82916 7.66475Z" fill="none"/>
+		</svg>
+
+		`;
 
 		header.appendChild(confTab);
 		header.appendChild(accessTab);
@@ -1140,14 +1157,14 @@ testManager.window.addEventListener("click", async e => {
 					<div class="box-content">
 
 					<div class="option">
-						<h2 class="box-content__header box-content__header--h3">Link</h2>
+						<h2 class="box-content__header box-content__header--h2">Link</h2>
 						<h3 class="box-content__label">Test will be active at this link for everyone:</h3>
 						<a class="box-content__link" target="_blank" href=${link}>${falseLink}</a>
 					</div>
 
 					<div class="option">
-					<h2 class="box-content__header box-content__header--h3">Code</h2>
-						<label class="box-content__label">Test will be active for everyone, who knows this code: <input ${checked} class="window__input window__input--set-test-code window__input--radio" type="checkbox" name="bonusLockTest" value="${!!checked}"></label>
+					<h2 class="box-content__header box-content__header--h2">Test Code</h2>
+						<label class="box-content__label">Require code for your test <input ${checked} class="window__input window__input--set-test-code window__input--radio" type="checkbox" name="bonusLockTest" value="${!!checked}"></label>
 						<span class="info"><input type="text" class="window__input window__input--test-code" name="code" placeholder="Enter your code" ${disabled} value="${value}"></span>
 					</div>
 				</div>
@@ -1170,7 +1187,7 @@ testManager.window.addEventListener("click", async e => {
 							<h2 class="box-content__header box-content__header--h2">Test time</h2>
 							<span class="info">
 								<div>
-									<h3 class="box-content__header box-content__header--h3">For</h3>
+									<h3 class="box-content__header box-content__header--h3">Starts at</h3>
 									<input type="text" class="window__input window__input--test-start-time window__input--time" name="testStartTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours()
 									)}:${addZero(new Date().getMinutes())}" >
@@ -1181,7 +1198,7 @@ testManager.window.addEventListener("click", async e => {
 							</span>
 							<span class="info">
 								<div>
-									<h3 class="box-content__header box-content__header--h3">To</h3>
+									<h3 class="box-content__header box-content__header--h3">Ends at</h3>
 									<input type="text" class="window__input window__input--test-end-time window__input--time" name="testEndTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours() + 1
 									)}:${addZero(new Date().getMinutes())}">
@@ -1193,6 +1210,7 @@ testManager.window.addEventListener("click", async e => {
 						</div>
 						<div class="option">
 							<h2 class="box-content__header box-content__header--h2">Limited Solutions Count</h2>
+							<h3 class="box-content__header box-content__header--h3">Amount of tries <span class="gray">(0 - Infinity)</span></h3>
 							<span class="info"><input type="text" class="window__input window__input--test-solutions-num" name="solutionsCount" placeholder="Solutions number" value="0"></span>
 						</div>
 					</div>

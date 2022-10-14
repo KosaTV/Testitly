@@ -47,7 +47,7 @@ const updateTestProperties = async (req, res) => {
 		else test.bonusLock = "";
 
 		if (data.solvedBy) test.solvedBy = data.solvedBy;
-		if (data.solutionsCount) test.limitedSolutionsCount = data.solutionsCount === 0 || data.solutionsCount >= 999 ? 999 : data.solutionsCount;
+		if (data.solutionsCount) test.limitedSolutionsCount = data.solutionsCount === "0" || data.solutionsCount >= 999 ? 9999 : data.solutionsCount;
 		if (data.testStartTime && data.testStartDate && data.testEndTime && data.testEndDate) {
 			const startTime = data.testStartTime.split(":");
 			const startDate = data.testStartDate.split("/");

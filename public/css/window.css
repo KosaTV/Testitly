@@ -335,9 +335,15 @@
   margin-top: 1rem;
 }
 .window__top-bar {
+  justify-content: flex-start;
   margin: 0;
   padding: 1rem;
   gap: 1rem;
+}
+@media only screen and (max-width: 579px) {
+  .window__top-bar {
+    justify-content: center;
+  }
 }
 .window__content {
   position: relative;

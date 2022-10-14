@@ -269,6 +269,9 @@
   transition: transform 0.5s 0s ease;
 }
 
+.form--mini {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25);
+}
 .form .info {
   padding: 5rem;
   background: white;
@@ -292,7 +295,7 @@
   border-bottom-right-radius: 0;
 }
 .form .info .input-cnt--flex .info__submit {
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   outline: none;

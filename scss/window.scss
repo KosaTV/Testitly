@@ -42,9 +42,14 @@
 	}
 
 	&__top-bar {
+		justify-content: flex-start;
 		margin: 0;
 		padding: 1rem;
 		gap: 1rem;
+
+		@include media(largeMobile) {
+			justify-content: center;
+		}
 	}
 
 	&__content {

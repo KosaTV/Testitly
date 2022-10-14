@@ -131,6 +131,8 @@
 			left: 0;
 			padding: 1rem;
 			gap: 1rem;
+			z-index: 2;
+			background: white;
 		}
 
 		.window__input {
@@ -385,53 +387,67 @@
 	flex-wrap: nowrap;
 	align-items: stretch;
 
+	.gray {
+		font-weight: 900;
+		color: map-get($white, "5");
+	}
+
 	.explorer {
 		@include flex-center;
-		flex-direction: column;
+		flex-flow: column nowrap;
 		align-items: stretch;
 		justify-content: stretch;
 
 		&__header {
 			@include flex-center;
-			justify-content: space-around;
+			justify-content: center;
 		}
 
 		&__content {
-			// flex: 1;
 			overflow: auto;
 		}
 
 		&__tab {
 			@include flex-center;
-			flex-direction: column;
-			border-radius: 3rem;
-			width: 128px;
-			font-size: 2rem;
-			padding: 2rem;
-			margin: 2rem;
-			box-shadow: inset 0 0 1px transparent;
-			flex: 1 1 0;
+			border-radius: 1.5rem;
+			width: 160px;
+			font-size: 1.5rem;
+			box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+			padding: 1rem 0;
+			margin: 1rem;
 			align-self: stretch;
 			cursor: pointer;
 			user-select: none;
 			border-top: none;
 			margin-right: 1px;
+			stroke: black;
 			$this: &;
 
+			@include media(largeMobile) {
+				width: 64px;
+			}
+
 			&-text {
-				@include media(mobile) {
+				@include media(largeMobile) {
 					display: none;
 				}
 			}
 
+			&-ico {
+				margin: 0.5rem;
+			}
+
 			&:hover {
 				color: white;
+				stroke: white;
 				background: $secondary-color;
 			}
 
 			&--active {
 				color: white;
+				stroke: white;
 				background: $secondary-color;
+				box-shadow: 0px 1px 4px $secondary-color;
 			}
 		}
 
@@ -480,12 +496,14 @@
 
 		&__header {
 			&--h2 {
-				font-size: 1.7rem;
-				color: map-get($white, "8");
+				font-size: 4rem;
+				color: map-get($white, "5");
+				margin: 2rem;
 			}
 		}
 
 		.option {
+			text-align: center;
 			padding: 1rem;
 
 			.info {
@@ -504,11 +522,11 @@
 		}
 
 		&__label {
-			font-size: 1.5rem;
-			color: map-get($white, "8");
 			margin: 1rem;
+			font-size: 1.5rem;
+			color: map-get($white, "10");
 			cursor: pointer;
-			@include flex-center(column, nowrap);
+			@include flex-center(row);
 		}
 
 		&__small-text {
@@ -615,6 +633,7 @@
 		.info {
 			&__item {
 				@include flex-center(column, nowrap);
+				min-width: 64px;
 				margin: 0 0.5rem;
 
 				.info__header {
@@ -652,11 +671,6 @@
 	}
 
 	.box-content {
-		&__label {
-			margin: 0;
-			@include flex-center(row, flex-start);
-		}
-
 		.window__input--radio {
 			width: 20px;
 			height: 20px;
