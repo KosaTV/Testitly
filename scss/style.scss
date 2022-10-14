@@ -61,6 +61,7 @@
 
 .box {
 	@include flex-center(column, nowrap);
+	$this: &;
 
 	&--main {
 		-webkit-user-drag: none;
@@ -114,7 +115,15 @@
 		&:hover {
 			background: $secondary-color;
 			color: white;
+
+			#{$this}__svg-path {
+				fill: white;
+			}
 		}
+	}
+
+	&__svg-path {
+		fill: $secondary-color;
 	}
 
 	&__text {

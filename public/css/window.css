@@ -270,6 +270,12 @@
   background: hsl(210deg, 100%, 50%);
   color: white;
 }
+.box__button:hover .box__svg-path {
+  fill: white;
+}
+.box__svg-path {
+  fill: hsl(210deg, 100%, 50%);
+}
 .box__text {
   margin: 2rem 0;
 }
