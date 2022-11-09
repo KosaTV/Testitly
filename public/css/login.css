@@ -72,7 +72,7 @@
 
 .page {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -97,7 +97,7 @@
 }
 .context .form {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   padding: 12.5rem 15rem;
@@ -120,7 +120,7 @@
 }
 .context .form__double-row {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
 }
@@ -133,7 +133,7 @@
   }
   .context .form__double-row {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
@@ -144,7 +144,7 @@
   }
   .context .form__double-row .input-cnt {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
     margin-top: 6.4rem;
@@ -155,7 +155,7 @@
 }
 .context .form__group {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
@@ -266,7 +266,7 @@
 }
 .context .form .info__side-icon {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -353,7 +353,7 @@
 }
 .context .info {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
@@ -367,7 +367,7 @@
 
 .options {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   margin: 1rem;
@@ -377,7 +377,7 @@
 
 .mini-link {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;

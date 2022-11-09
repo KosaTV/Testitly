@@ -60,7 +60,7 @@
 
 .page {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -111,7 +111,7 @@
 }
 .bg-loader {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -137,7 +137,7 @@
 
 .box {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: nowrap;
 }
@@ -158,7 +158,7 @@
 @media only screen and (min-width: 480px) and (max-width: 1023px) {
   .box--main {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -170,7 +170,7 @@
 @media only screen and (max-width: 479px) {
   .box--main {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -189,7 +189,7 @@
 }
 .box__button {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   outline: none;

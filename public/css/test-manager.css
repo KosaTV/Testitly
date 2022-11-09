@@ -60,7 +60,7 @@
 
 .page {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -92,7 +92,7 @@
 }
 .test-manager .window__tests .window__test .window__item-button {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   outline: none;
@@ -128,7 +128,7 @@
 }
 .test-manager .window__tests .window__test .test-manager__container-btn {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -188,7 +188,7 @@
 }
 .creating-test .window__content .window__test-title {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   position: sticky;
@@ -286,7 +286,7 @@
   left: calc(60% + 30px);
   transform: translateY(-50%);
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   width: 20px;
@@ -415,7 +415,7 @@
 
 .test-settings {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: stretch;
   flex-wrap: nowrap;
@@ -427,7 +427,7 @@
 }
 .test-settings .explorer {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   flex-flow: column nowrap;
@@ -436,7 +436,7 @@
 }
 .test-settings .explorer__header {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   justify-content: center;
@@ -446,7 +446,7 @@
 }
 .test-settings .explorer__tab {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   border-radius: 1.5rem;
@@ -556,7 +556,7 @@
 .solution-settings .box-content .option .info,
 .test-settings .box-content .option .info {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
 }
@@ -577,7 +577,7 @@
   color: rgb(0, 0, 0);
   cursor: pointer;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
 }
@@ -682,7 +682,7 @@
 .solution-settings .table .info__item,
 .test-settings .table .info__item {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: nowrap;
   min-width: 64px;
@@ -701,14 +701,14 @@
 .solution-settings .table .info .options,
 .test-settings .table .info .options {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
 }
 .solution-settings .table .info .options__item,
 .test-settings .table .info .options__item {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   width: 35px;
@@ -720,7 +720,7 @@
 
 .save-section {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
 }

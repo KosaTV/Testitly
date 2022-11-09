@@ -34,7 +34,7 @@
 
 @mixin flex-center($direction: row, $position: center) {
 	display: flex;
-	flex-flow: $direction wrap;
+	flex-flow: $direction nowrap;
 	align-items: center;
 	justify-content: $position;
 }

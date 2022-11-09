@@ -60,7 +60,7 @@
 
 .page {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -72,7 +72,7 @@
 
 .communicat .window__content {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   height: calc(100% - 43px);
@@ -81,13 +81,13 @@
 
 .select-list {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
 }
 .select-list .window__content {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   min-height: calc(100% - 43px);
