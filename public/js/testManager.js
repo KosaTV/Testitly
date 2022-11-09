@@ -1177,7 +1177,7 @@ testManager.window.addEventListener("click", async e => {
 					<div class="option">
 					<h2 class="box-content__header box-content__header--h2">Test Code</h2>
 						<label class="box-content__label">Require code for your test <input ${checked} class="window__input window__input--set-test-code window__input--radio" type="checkbox" name="bonusLockTest" value="${!!checked}"></label>
-						<span class="info"><input type="text" class="window__input window__input--test-code" name="code" placeholder="Enter your code" ${disabled} value="${value}"></span>
+						<span class="info"><input type="text" class="window__input window__input--test-code window__input--config-input" name="code" placeholder="Enter your code" ${disabled} value="${value}"></span>
 					</div>
 				</div>
 				<button class="window__button window__button--save">Save</button>
@@ -1200,10 +1200,10 @@ testManager.window.addEventListener("click", async e => {
 							<span class="info">
 								<div>
 									<h3 class="box-content__header box-content__header--h3">Starts at</h3>
-									<input type="text" class="window__input window__input--test-start-time window__input--time" name="testStartTime" placeholder="HH:MM" value="${addZero(
+									<input type="text" class="window__input window__input--config-input window__input--test-start-time window__input--time" name="testStartTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours()
 									)}:${addZero(new Date().getMinutes())}" >
-									<input disabled type="text" class="window__input window__input--test-start-date window__input--date" name="testStartDate" placeholder="mm/dd/yyyy" value="${addZero(
+									<input disabled type="text" class="window__input window__input--config-input window__input--test-start-date window__input--date" name="testStartDate" placeholder="mm/dd/yyyy" value="${addZero(
 										new Date().getMonth() + 1
 									)}/${addZero(new Date().getDate())}/${addZero(new Date().getFullYear())}">
 								</div>
@@ -1211,10 +1211,10 @@ testManager.window.addEventListener("click", async e => {
 							<span class="info">
 								<div>
 									<h3 class="box-content__header box-content__header--h3">Ends at</h3>
-									<input type="text" class="window__input window__input--test-end-time window__input--time" name="testEndTime" placeholder="HH:MM" value="${addZero(
+									<input type="text" class="window__input window__input--config-input window__input--test-end-time window__input--time" name="testEndTime" placeholder="HH:MM" value="${addZero(
 										new Date().getHours() + 1
 									)}:${addZero(new Date().getMinutes())}">
-									<input disabled type="text" class="window__input window__input--test-end--date window__input--date" name="testEndDate" placeholder="mm/dd/yyyy" value="${addZero(
+									<input disabled type="text" class="window__input window__input--config-input window__input--test-end--date window__input--date" name="testEndDate" placeholder="mm/dd/yyyy" value="${addZero(
 										new Date().getMonth() + 1
 									)}/${addZero(new Date().getDate())}/${addZero(new Date().getFullYear())}">
 								</div>
@@ -1223,7 +1223,7 @@ testManager.window.addEventListener("click", async e => {
 						<div class="option">
 							<h2 class="box-content__header box-content__header--h2">Limited Solutions Count</h2>
 							<h3 class="box-content__header box-content__header--h3">Amount of tries <span class="gray">(0 - Infinity)</span></h3>
-							<span class="info"><input type="text" class="window__input window__input--test-solutions-num" name="solutionsCount" placeholder="Solutions number" value="0"></span>
+							<span class="info"><input type="text" class="window__input window__input--config-input window__input--test-solutions-num" name="solutionsCount" placeholder="Solutions number" value="0"></span>
 						</div>
 					</div>
 					<button class="window__button window__button--save">Save</button>
@@ -1277,7 +1277,7 @@ testManager.window.addEventListener("click", async e => {
 							</svg>
 							
 							</div>
-							<div class="info__content">${percentFrom(person.points, person.maxPoints)}%</div>
+							<div class="info__content">${percentFrom(person.points, person.maxPoints)}</div>
 						</span>
 						<div class="options">
 							<span class="options__item options__item--details">
@@ -1301,7 +1301,7 @@ testManager.window.addEventListener("click", async e => {
 				</div>
 					<div class="box-content box-content--view">
 					<div class="option">
-						<h2 class="box-content__header box-content__header--h2">People who solved test</h2>
+						<h2 class="box-content__header box-content__header--h2">Test Takers</h2>
 						<div class="table">
 							${persons}
 						</div>

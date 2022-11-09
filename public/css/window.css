@@ -66,6 +66,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  height: -webkit-fill-available;
   color: rgb(0, 0, 0);
 }
 .page--main {
@@ -136,6 +137,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  height: -webkit-fill-available;
   color: rgb(0, 0, 0);
 }
 .page--main {
@@ -341,6 +343,7 @@
 .window--max {
   width: 100vw !important;
   height: 100vh !important;
+  height: -webkit-fill-available !important;
   border-radius: 0;
 }
 .window__button-cnt {
@@ -397,6 +400,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: -webkit-fill-available;
   z-index: -1;
 }
 .window__button {
@@ -431,12 +435,15 @@
 .window__input {
   outline: none;
   height: 50px;
-  min-width: 100px;
+  min-width: 50px;
   padding: 1.3rem;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   border: 3px solid transparent;
   border-radius: 10px;
   font-size: 2rem;
+}
+.window__input--config-input {
+  min-width: 180px;
 }
 .window__input::placeholder {
   opacity: 1;

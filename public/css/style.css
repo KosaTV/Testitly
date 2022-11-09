@@ -64,6 +64,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  height: -webkit-fill-available;
   color: rgb(0, 0, 0);
 }
 .page--main {

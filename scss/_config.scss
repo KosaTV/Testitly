@@ -207,6 +207,7 @@ $system-shadow: 0 0 15px -5px map-get($white, "4");
 .page {
 	@include flex-center;
 	height: 100vh;
+	height: -webkit-fill-available;
 	color: map-get($white, "10");
 
 	&--main {
