@@ -1,11 +1,5 @@
 @import "reset", "config", "mixins";
 
-.page {
-	@include media(largeMobile) {
-		align-items: flex-start;
-	}
-}
-
 .context {
 	.form-cnt__header {
 		text-align: center;

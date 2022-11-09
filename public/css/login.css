@@ -82,12 +82,6 @@
   overflow: hidden;
 }
 
-@media only screen and (max-width: 579px) {
-  .page {
-    align-items: flex-start;
-  }
-}
-
 .context .form-cnt__header {
   text-align: center;
   font-size: 6rem;
