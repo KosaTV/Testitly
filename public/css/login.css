@@ -1,390 +1,389 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 :root {
-  font: 62.5% "Inter", "Nanum Gothic", serif;
+	font: 62.5% "Inter", "Nanum Gothic", serif;
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 @keyframes closing {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
 }
 @keyframes loading {
-  100% {
-    transform: rotate(1turn);
-  }
+	100% {
+		transform: rotate(1turn);
+	}
 }
 ::selection {
-  background: hsl(210deg, 100%, 50%);
-  color: white;
+	background: hsl(210deg, 100%, 50%);
+	color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: hsl(210deg, 100%, 50%);
-  border: 4px solid white;
+	border-radius: 1rem;
+	background: hsl(210deg, 100%, 50%);
+	border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  border-radius: 1rem;
-  background: #3399ff;
+	border-radius: 1rem;
+	background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  background: white;
+	border-radius: 1rem;
+	background: white;
 }
 
 /* The track NOT covered by the handle. */
 ::-webkit-scrollbar-track-piece {
-  background: transparent;
+	background: transparent;
 }
 
 /* Corner */
 ::-webkit-scrollbar-corner {
-  background: transparent;
+	background: transparent;
 }
 
 /* Resizer */
 ::-webkit-resizer {
-  background: transparent;
+	background: transparent;
 }
 
 .page {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  height: -webkit-fill-available;
-  color: rgb(0, 0, 0);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color: rgb(0, 0, 0);
 }
 .page--main {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .context .form-cnt__header {
-  text-align: center;
-  font-size: 6rem;
-  margin: 1rem 0;
-  font-weight: 400;
-  color: hsl(210deg, 100%, 50%);
+	text-align: center;
+	font-size: 6rem;
+	margin: 1rem 0;
+	font-weight: 400;
+	color: hsl(210deg, 100%, 50%);
 }
 .context .send {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  padding: 1rem;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	padding: 1rem;
 }
 .context .form {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  padding: 12.5rem 15rem;
-  background: white;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
-  border-radius: 25px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	padding: 12.5rem 15rem;
+	background: white;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 25px;
 }
 @media only screen and (min-width: 480px) and (max-width: 1023px) {
-  .context .form {
-    box-shadow: none;
-  }
+	.context .form {
+		box-shadow: none;
+	}
 }
 @media only screen and (max-width: 579px) {
-  .context .form {
-    width: 100%;
-    padding: 1rem;
-    background: none;
-    box-shadow: none;
-  }
+	.context .form {
+		width: 100%;
+		padding: 1rem;
+		background: none;
+		box-shadow: none;
+	}
 }
 .context .form__double-row {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
 }
 .context .form__double-row:first-child {
-  padding-bottom: 6.4rem;
+	padding-bottom: 6.4rem;
 }
 @media only screen and (min-width: 1024px) {
-  .context .form {
-    align-items: stretch;
-  }
-  .context .form__double-row {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    gap: 3.2rem;
-  }
-  .context .form__double-row:first-child {
-    padding-bottom: 0;
-  }
-  .context .form__double-row .input-cnt {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6.4rem;
-  }
-  .context .form .form__input--text {
-    width: 100%;
-  }
+	.context .form {
+		align-items: stretch;
+	}
+	.context .form__double-row {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+		flex-grow: 1;
+		gap: 3.2rem;
+	}
+	.context .form__double-row:first-child {
+		padding-bottom: 0;
+	}
+	.context .form__double-row .input-cnt {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+		margin-top: 6.4rem;
+	}
+	.context .form .form__input--text {
+		width: 100%;
+	}
 }
 .context .form__group {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem 0;
-  border: none;
-  font-size: 1.5rem;
-  color: hsl(210deg, 100%, 50%);
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem 0;
+	border: none;
+	font-size: 1.5rem;
+	color: hsl(210deg, 100%, 50%);
 }
 .context .form .info .input-cnt {
-  position: relative;
-  display: inline-block;
-  margin: 1rem;
+	position: relative;
+	display: inline-block;
+	margin: 1rem;
 }
 .context .form .info .input-cnt--flex {
-  display: flex;
+	display: flex;
 }
 .context .form .info .input-cnt--flex .info__input {
-  width: 30%;
-  padding: 1rem 1.5rem;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+	width: 30%;
+	padding: 1rem 1.5rem;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 .context .form .info .input-cnt--flex .info__submit {
-  border-radius: 2rem;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  outline: none;
-  padding: 1rem;
-  color: white;
-  border: none;
-  background: hsl(210deg, 100%, 50%);
-  font-size: 2.5rem;
-  cursor: pointer;
-  transition: background 0.2s 0s ease;
+	border-radius: 2rem;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	outline: none;
+	padding: 1rem;
+	color: white;
+	border: none;
+	background: hsl(210deg, 100%, 50%);
+	font-size: 2.5rem;
+	cursor: pointer;
+	transition: background 0.2s 0s ease;
 }
 .context .form .info .input-cnt--flex .info__submit:active {
-  background: rgb(200, 200, 200);
+	background: rgb(200, 200, 200);
 }
 .context .form .info .input-cnt--flex .info__placeholder {
-  left: 2%;
+	left: 2%;
 }
 .context .form .info .input-cnt--flex .info__border {
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s 0s ease;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s 0s ease;
 }
 .context .form .info__placeholder {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  font-size: 2rem;
-  line-height: 0.7;
-  transform: translate(0, -50%);
-  user-select: none;
-  pointer-events: none;
-  background: white;
-  border-radius: 0.5rem;
-  padding: 0.2rem;
-  height: 20px;
-  transition: transform 0.2s 0s ease;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	font-size: 2rem;
+	line-height: 0.7;
+	transform: translate(0, -50%);
+	user-select: none;
+	pointer-events: none;
+	background: white;
+	border-radius: 0.5rem;
+	padding: 0.2rem;
+	height: 20px;
+	transition: transform 0.2s 0s ease;
 }
 .context .form .info__input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid rgb(190, 190, 190);
-  font-size: 2.2rem;
-  color: rgb(150, 150, 150);
-  padding: 1.3rem 1rem;
-  min-width: 200px;
-  width: 100%;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgb(190, 190, 190);
+	font-size: 2.2rem;
+	color: rgb(150, 150, 150);
+	padding: 1.3rem 1rem;
+	min-width: 200px;
+	width: 100%;
 }
 .context .form .info__input::placeholder {
-  color: rgb(175, 175, 175);
+	color: rgb(175, 175, 175);
 }
 .context .form .info__input:focus {
-  background: rgba(0, 128, 255, 0.04);
+	background: rgba(0, 128, 255, 0.04);
 }
 .context .form .info__input:focus + .info__placeholder {
-  color: hsl(210deg, 100%, 50%);
-  transform: translate(-4px, -35px);
+	color: hsl(210deg, 100%, 50%);
+	transform: translate(-4px, -35px);
 }
 .context .form .info__input:valid + .info__placeholder {
-  color: hsl(210deg, 100%, 50%);
-  transform: translate(-10px, -35px);
+	color: hsl(210deg, 100%, 50%);
+	transform: translate(-10px, -35px);
 }
 .context .form .info__input:focus ~ .info__border {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  transform-origin: left;
-  background: hsl(210deg, 100%, 50%);
-  transform: scaleX(1);
-  transition: transform 0.5s 0s ease;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	transform-origin: left;
+	background: hsl(210deg, 100%, 50%);
+	transform: scaleX(1);
+	transition: transform 0.5s 0s ease;
 }
 .context .form .info__description {
-  position: absolute;
-  pointer-events: none;
-  top: 110%;
-  left: 0;
-  opacity: 0;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  background: white;
-  border-radius: 0.75rem;
-  box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.25);
-  transition: opacity 0.5s 0.2s ease;
+	position: absolute;
+	pointer-events: none;
+	top: 110%;
+	left: 0;
+	opacity: 0;
+	padding: 1rem;
+	margin: 0.5rem 0;
+	background: white;
+	border-radius: 0.75rem;
+	box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.25);
+	transition: opacity 0.5s 0.2s ease;
 }
 .context .form .info__side-icon {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 32px;
-  height: 32px;
-  transform: translateY(-50%);
-  padding: 0.5rem 1rem;
-  background: hsl(210deg, 100%, 50%);
-  color: white;
-  border-radius: 0.75rem;
-  margin: 0 1rem;
-  cursor: help;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 32px;
+	height: 32px;
+	transform: translateY(-50%);
+	padding: 0.5rem 1rem;
+	background: hsl(210deg, 100%, 50%);
+	color: white;
+	border-radius: 0.75rem;
+	margin: 0 1rem;
+	cursor: help;
 }
 .context .form .info__side-icon:hover ~ .info__description {
-  opacity: 1;
+	opacity: 1;
 }
 .context .form .input-cnt {
-  position: relative;
-  display: inline-block;
-  color: rgb(150, 150, 150);
+	position: relative;
+	display: inline-block;
+	color: rgb(150, 150, 150);
 }
 .context .form .input-cnt:not(.context .form .input-cnt:first-child) {
-  margin-top: 6.4rem;
+	margin-top: 6.4rem;
 }
 .context .form .input-cnt--hidden {
-  display: none;
+	display: none;
 }
 .context .form__input--text {
-  outline: none;
-  width: 300px;
-  height: 50px;
-  border: none;
-  padding: 1.3rem;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-  border: 3px solid transparent;
-  border-radius: 10px;
-  font-size: 2rem;
+	outline: none;
+	width: 300px;
+	height: 50px;
+	border: none;
+	padding: 1.3rem;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+	border: 3px solid transparent;
+	border-radius: 10px;
+	font-size: 2rem;
 }
 .context .form__input--text::placeholder {
-  color: rgb(175, 175, 175);
+	color: rgb(175, 175, 175);
 }
 .context .form__input--text:focus {
-  border-color: hsl(210deg, 100%, 50%);
+	border-color: hsl(210deg, 100%, 50%);
 }
 .context .form__input--text:focus + .info__placeholder {
-  color: hsl(210deg, 100%, 50%);
-  transform: translate(-15px, -55px);
+	color: hsl(210deg, 100%, 50%);
+	transform: translate(-15px, -55px);
 }
 .context .form__input--text:focus ~ .info__side-icon {
-  opacity: 1;
+	opacity: 1;
 }
 .context .form__input--text:valid + .info__placeholder {
-  color: hsl(210deg, 100%, 50%);
-  transform: translate(-15px, -55px);
+	color: hsl(210deg, 100%, 50%);
+	transform: translate(-15px, -55px);
 }
 .context .form__input--text:valid:not(.context .form__input--text:focus) + .info__placeholder {
-  color: black;
+	color: black;
 }
 .context .form__input--text:invalid:not(.context .form__input--text:focus, .context .form__input--text:placeholder-shown) + .info__placeholder {
-  color: hsl(0deg, 100%, 50%);
-  transform: translate(-15px, -55px);
+	color: hsl(0deg, 100%, 50%);
+	transform: translate(-15px, -55px);
 }
 .context .form__button--submit {
-  outline: none;
-  padding: 1rem 3rem;
-  margin-top: 4.8rem;
-  color: white;
-  border: none;
-  background: hsl(210deg, 100%, 50%);
-  min-width: 300px;
-  height: 50px;
-  font-size: 2.5rem;
-  font-family: "Inter";
-  font-weight: 400;
-  cursor: pointer;
-  transition: background 0.2s 0s ease;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+	outline: none;
+	padding: 1rem 3rem;
+	margin-top: 4.8rem;
+	color: white;
+	border: none;
+	background: hsl(210deg, 100%, 50%);
+	min-width: 300px;
+	height: 50px;
+	font-size: 2.5rem;
+	font-family: "Inter";
+	font-weight: 400;
+	cursor: pointer;
+	transition: background 0.2s 0s ease;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
 }
 .context .form__button--submit:active {
-  background: rgb(200, 200, 200);
+	background: rgb(200, 200, 200);
 }
 .context .info {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 3.2rem;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: 3.2rem;
 }
 
 .error {
-  font-size: 1.3rem;
-  margin: 0.2rem;
-  color: red;
+	font-size: 1.3rem;
+	margin: 0.2rem;
+	color: red;
 }
 
 .options {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem;
-  font-size: 1.4rem;
-  color: rgb(150, 150, 150);
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem;
+	font-size: 1.4rem;
+	color: rgb(150, 150, 150);
 }
 
 .mini-link {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  height: 64px;
-  text-decoration: none;
-  color: hsl(210deg, 100%, 50%);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.75rem;
+	height: 64px;
+	text-decoration: none;
+	color: hsl(210deg, 100%, 50%);
 }
 
 /*# sourceMappingURL=login.css.map */

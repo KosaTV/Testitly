@@ -1,123 +1,122 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 @keyframes closing {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
 }
 @keyframes loading {
-  100% {
-    transform: rotate(1turn);
-  }
+	100% {
+		transform: rotate(1turn);
+	}
 }
 ::selection {
-  background: hsl(210deg, 100%, 50%);
-  color: white;
+	background: hsl(210deg, 100%, 50%);
+	color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: hsl(210deg, 100%, 50%);
-  border: 4px solid white;
+	border-radius: 1rem;
+	background: hsl(210deg, 100%, 50%);
+	border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  border-radius: 1rem;
-  background: #3399ff;
+	border-radius: 1rem;
+	background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  background: white;
+	border-radius: 1rem;
+	background: white;
 }
 
 /* The track NOT covered by the handle. */
 ::-webkit-scrollbar-track-piece {
-  background: transparent;
+	background: transparent;
 }
 
 /* Corner */
 ::-webkit-scrollbar-corner {
-  background: transparent;
+	background: transparent;
 }
 
 /* Resizer */
 ::-webkit-resizer {
-  background: transparent;
+	background: transparent;
 }
 
 .page {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  height: -webkit-fill-available;
-  color: rgb(0, 0, 0);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color: rgb(0, 0, 0);
 }
 .page--main {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 :root {
-  font: 62.5% "Inter", "Nanum Gothic", serif;
+	font: 62.5% "Inter", "Nanum Gothic", serif;
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .page--blocked {
-  overflow: hidden;
+	overflow: hidden;
 }
 .page--blocked * {
-  display: none;
+	display: none;
 }
 .page--blocked .communicat {
-  display: block;
+	display: block;
 }
 .page--blocked .communicat__text {
-  display: inherit;
-  opacity: 1;
+	display: inherit;
+	opacity: 1;
 }
 
 .communicat {
-  display: none;
-  z-index: 9999;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: white;
+	display: none;
+	z-index: 9999;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
 }
 .communicat__text {
-  position: absolute;
-  width: 100vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: hsl(210deg, 100%, 50%);
-  font-size: 2rem;
-  z-index: 10000;
-  text-align: center;
-  animation: appear 1s 0s ease forwards;
+	position: absolute;
+	width: 100vw;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: hsl(210deg, 100%, 50%);
+	font-size: 2rem;
+	z-index: 10000;
+	text-align: center;
+	animation: appear 1s 0s ease forwards;
 }
 
 /*# sourceMappingURL=detectDevice.css.map */

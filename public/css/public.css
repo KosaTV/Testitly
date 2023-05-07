@@ -1,126 +1,125 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 @keyframes closing {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
 }
 @keyframes loading {
-  100% {
-    transform: rotate(1turn);
-  }
+	100% {
+		transform: rotate(1turn);
+	}
 }
 ::selection {
-  background: hsl(210deg, 100%, 50%);
-  color: white;
+	background: hsl(210deg, 100%, 50%);
+	color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: hsl(210deg, 100%, 50%);
-  border: 4px solid white;
+	border-radius: 1rem;
+	background: hsl(210deg, 100%, 50%);
+	border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  border-radius: 1rem;
-  background: #3399ff;
+	border-radius: 1rem;
+	background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  background: white;
+	border-radius: 1rem;
+	background: white;
 }
 
 /* The track NOT covered by the handle. */
 ::-webkit-scrollbar-track-piece {
-  background: transparent;
+	background: transparent;
 }
 
 /* Corner */
 ::-webkit-scrollbar-corner {
-  background: transparent;
+	background: transparent;
 }
 
 /* Resizer */
 ::-webkit-resizer {
-  background: transparent;
+	background: transparent;
 }
 
 .page {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  height: -webkit-fill-available;
-  color: rgb(0, 0, 0);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color: rgb(0, 0, 0);
 }
 .page--main {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .public-test__test {
-  user-select: none;
-  padding: 2rem;
-  font-size: 2rem;
-  color: rgb(150, 150, 150);
-  border-bottom: 1px solid rgb(241, 241, 241);
+	user-select: none;
+	padding: 2rem;
+	font-size: 2rem;
+	color: rgb(150, 150, 150);
+	border-bottom: 1px solid rgb(241, 241, 241);
 }
 .public-test__test:hover {
-  background: #f0f0ff;
+	background: #f0f0ff;
 }
 
 .testing .window__content {
-  overflow: auto;
-  height: calc(100% - 43px);
+	overflow: auto;
+	height: calc(100% - 43px);
 }
 .testing__q-box {
-  margin: 0.5rem;
-  padding: 1rem;
-  color: rgb(190, 190, 190);
-  background: #f0f0ff;
+	margin: 0.5rem;
+	padding: 1rem;
+	color: rgb(190, 190, 190);
+	background: #f0f0ff;
 }
 .testing__q-title-box {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 .testing__q-answears-box {
-  padding: 0.5rem 1rem;
+	padding: 0.5rem 1rem;
 }
 .testing__q-answears-box .testing__label {
-  display: block;
-  margin: 1rem;
-  font-size: 1.75rem;
+	display: block;
+	margin: 1rem;
+	font-size: 1.75rem;
 }
 .testing__q-answears-box .testing__label .testing__checkable {
-  margin: 0.5rem;
+	margin: 0.5rem;
 }
 
 .resultat .window__content {
-  min-height: calc(100% - 43px);
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
+	min-height: calc(100% - 43px);
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
 }
 .resultat .window__content .resultat__percent {
-  font-size: 6rem;
-  color: hsl(210deg, 100%, 50%);
+	font-size: 6rem;
+	color: hsl(210deg, 100%, 50%);
 }
 .resultat .window__content .resultat__points {
-  font-size: 3rem;
-  color: rgb(225, 225, 225);
+	font-size: 3rem;
+	color: rgb(225, 225, 225);
 }
 
 /*# sourceMappingURL=public.css.map */

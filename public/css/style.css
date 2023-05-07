@@ -1,251 +1,250 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&display=swap");
 @keyframes closing {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
 }
 @keyframes loading {
-  100% {
-    transform: rotate(1turn);
-  }
+	100% {
+		transform: rotate(1turn);
+	}
 }
 ::selection {
-  background: hsl(210deg, 100%, 50%);
-  color: white;
+	background: hsl(210deg, 100%, 50%);
+	color: white;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: hsl(210deg, 100%, 50%);
-  border: 4px solid white;
+	border-radius: 1rem;
+	background: hsl(210deg, 100%, 50%);
+	border: 4px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  border-radius: 1rem;
-  background: #3399ff;
+	border-radius: 1rem;
+	background: #3399ff;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  background: white;
+	border-radius: 1rem;
+	background: white;
 }
 
 /* The track NOT covered by the handle. */
 ::-webkit-scrollbar-track-piece {
-  background: transparent;
+	background: transparent;
 }
 
 /* Corner */
 ::-webkit-scrollbar-corner {
-  background: transparent;
+	background: transparent;
 }
 
 /* Resizer */
 ::-webkit-resizer {
-  background: transparent;
+	background: transparent;
 }
 
 .page {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  height: -webkit-fill-available;
-  color: rgb(0, 0, 0);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color: rgb(0, 0, 0);
 }
 .page--main {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 :root {
-  font: 62.5% "Inter", "Nanum Gothic", serif;
+	font: 62.5% "Inter", "Nanum Gothic", serif;
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 @keyframes load-finishing {
-  0% {
-    border-color: rgb(200, 200, 200);
-  }
-  100% {
-    border-color: rgb(200, 200, 200);
-    transform: scale(30);
-  }
+	0% {
+		border-color: rgb(200, 200, 200);
+	}
+	100% {
+		border-color: rgb(200, 200, 200);
+		transform: scale(30);
+	}
 }
 @keyframes slide-vertically {
-  100% {
-    transform: translateY(0);
-  }
+	100% {
+		transform: translateY(0);
+	}
 }
 @keyframes slide-horizontally {
-  100% {
-    transform: translateX(0);
-  }
+	100% {
+		transform: translateX(0);
+	}
 }
 @keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 .bg-loader {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  transition: opacity 0.5s 0.4s ease-in-out;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: white;
+	transition: opacity 0.5s 0.4s ease-in-out;
 }
 .bg-loader .loader {
-  width: 50px;
-  height: 50px;
-  border-left-color: hsl(210deg, 100%, 50%);
+	width: 50px;
+	height: 50px;
+	border-left-color: hsl(210deg, 100%, 50%);
 }
 .bg-loader--finished {
-  opacity: 0;
+	opacity: 0;
 }
 .bg-loader--finished .loader {
-  animation: load-finishing 0.9s 0s ease-in-out forwards;
+	animation: load-finishing 0.9s 0s ease-in-out forwards;
 }
 
 .box {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: nowrap;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: nowrap;
 }
 .box--main {
-  -webkit-user-drag: none;
-  overflow: hidden;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  background: #ffffff;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 2rem;
-  opacity: 0;
-  animation: appear 0.5s 0.8s ease-in-out forwards;
+	-webkit-user-drag: none;
+	overflow: hidden;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	background: #ffffff;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+	gap: 1rem;
+	padding: 1rem;
+	border-radius: 2rem;
+	opacity: 0;
+	animation: appear 0.5s 0.8s ease-in-out forwards;
 }
 @media only screen and (min-width: 480px) and (max-width: 1023px) {
-  .box--main {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    border-radius: 0;
-    overflow: auto;
-  }
+	.box--main {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		width: 100vw;
+		border-radius: 0;
+		overflow: auto;
+	}
 }
 @media only screen and (max-width: 479px) {
-  .box--main {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    border-radius: 0;
-    overflow: auto;
-  }
+	.box--main {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		width: 100vw;
+		border-radius: 0;
+		overflow: auto;
+	}
 }
 .box__logo {
-  user-select: none;
-  pointer-events: none;
-  -webkit-user-drag: none;
-  max-width: 250px;
-  max-height: 250px;
-  border-radius: 2rem;
+	user-select: none;
+	pointer-events: none;
+	-webkit-user-drag: none;
+	max-width: 250px;
+	max-height: 250px;
+	border-radius: 2rem;
 }
 .box__button {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  cursor: pointer;
-  border: none;
-  padding: 1rem;
-  width: 250px;
-  height: 250px;
-  font-size: 4rem;
-  background: white;
-  font-family: inherit;
-  border-radius: 2rem;
-  color: hsl(210deg, 100%, 50%);
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s 0s ease-out;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+	cursor: pointer;
+	border: none;
+	padding: 1rem;
+	width: 250px;
+	height: 250px;
+	font-size: 4rem;
+	background: white;
+	font-family: inherit;
+	border-radius: 2rem;
+	color: hsl(210deg, 100%, 50%);
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+	transition: all 0.2s 0s ease-out;
 }
 .box__button:hover {
-  background: hsl(210deg, 100%, 50%);
-  color: white;
+	background: hsl(210deg, 100%, 50%);
+	color: white;
 }
 .box__button:hover .box__svg-path {
-  fill: white;
+	fill: white;
 }
 .box__svg-path {
-  fill: hsl(210deg, 100%, 50%);
+	fill: hsl(210deg, 100%, 50%);
 }
 .box__text {
-  margin: 2rem 0;
+	margin: 2rem 0;
 }
 .box__tile {
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  opacity: 0;
-  margin: 1rem;
-  text-decoration: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	opacity: 0;
+	margin: 1rem;
+	text-decoration: none;
 }
 .box__tile:nth-child(2) {
-  transform: translateY(-120%);
-  animation: appear 0.6s 0.6s ease forwards, slide-vertically 0.6s 0.8s ease forwards;
+	transform: translateY(-120%);
+	animation: appear 0.6s 0.6s ease forwards, slide-vertically 0.6s 0.8s ease forwards;
 }
 .box__tile:last-child {
-  transform: translateX(120%);
-  animation: appear 0.6s 0.6s ease forwards, slide-horizontally 0.6s 0.8s ease forwards;
+	transform: translateX(120%);
+	animation: appear 0.6s 0.6s ease forwards, slide-horizontally 0.6s 0.8s ease forwards;
 }
 .box__tile:nth-child(3) {
-  transform: translateY(120%);
-  animation: appear 0.6s 0.6s ease forwards, slide-horizontally 0.6s 0.8s ease forwards;
+	transform: translateY(120%);
+	animation: appear 0.6s 0.6s ease forwards, slide-horizontally 0.6s 0.8s ease forwards;
 }
 .box__tile:first-child {
-  transform: translateX(-120%);
-  animation: appear 0.6s 0.6s ease forwards, slide-vertically 0.6s 0.8s ease forwards;
+	transform: translateX(-120%);
+	animation: appear 0.6s 0.6s ease forwards, slide-vertically 0.6s 0.8s ease forwards;
 }
 
 .tests {
-  display: none;
+	display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
